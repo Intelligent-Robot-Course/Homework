@@ -12,7 +12,8 @@ The state transition for the action open the door is as shown in Fig. 1. If the 
 <img src=image/f1.bmp/>
 </div>
 
-**Calculate the probability of:** $P(open|u)$ for $u=$ open door. ![formula](https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1)
+**Calculate the probability of:** $P(open|u)$ for $u=$ open door. <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 
 ### Question 2
 
