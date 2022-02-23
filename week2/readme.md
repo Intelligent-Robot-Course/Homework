@@ -1,6 +1,5 @@
 
-# Homework Week3
-
+# Homework Week2
 
 *Course:Intelligent Robots (CS401) – Professor: Qi Hao*
 
