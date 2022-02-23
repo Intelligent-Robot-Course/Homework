@@ -17,7 +17,7 @@ The state transition for the action open the door is as shown in the following f
 
 A robot is going through a door, where the state of the door is x = {open,closed}, the measurement of the door by the robot is *z = {open,closed}*, and the action of the robot is *u = {push,do_nothing}*. We assume that:
 
-* (1) The robot doesnt know the state of the door initially;
+* (1) The robot doesn't know the state of the door initially;
 
 * (2) The measurement noise: *p(z=open|x=open)=0.8*; *p(z=closed|x=open)=0.2*;
 
