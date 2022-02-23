@@ -5,11 +5,13 @@
 
 ### Question 1
 
-The state transition for the action open the door is as shown in Fig. 1. If the door is closed, the action open the door succeeds in ${\rm{80\% }}$ of all cases. Assume the probabilities of the closed door and open door are ${\rm{50\% }}$ respectively.
+The state transition for the action open the door is as shown in the following figure. If the door is closed, the action open the door succeeds in ${\rm{80\% }}$ of all cases. Assume the probabilities of the closed door and open door are ${\rm{50\% }}$ respectively.
 
 <div align=center> <img src=image/f1.bmp/> </div>
 
-**Calculate the probability of:** *P( open | u )* for *u =* open door.
+**Calculate the probability of:** 
+
+*P( open | u )* for *u =* "open door".
 
 ### Question 2
 
@@ -45,6 +47,13 @@ A robot cleaner is roaming within an apartment with four rooms. The map of the a
 
 ## Question 4
 
-Given the observation model <img src="https://latex.codecogs.com/svg.image?p\left(z_{t}&space;\mid&space;x_{0:&space;t},&space;z_{1:&space;t},&space;u_{1:&space;t}\right)=p\left(z_{t}&space;\mid&space;x_{t}\right)" title="p\left(z_{t} \mid x_{0: t}, z_{1: t}, u_{1: t}\right)=p\left(z_{t} \mid x_{t}\right)" /> and the dynamics model <img src="https://latex.codecogs.com/svg.image?p\left(x_{t}&space;\mid&space;x_{1:&space;t-1},&space;z_{1:&space;t},&space;u_{1:&space;t}\right)=p\left(x_{t}&space;\mid&space;x_{t-1},&space;u_{t}\right)" title="p\left(x_{t} \mid x_{1: t-1}, z_{1: t}, u_{1: t}\right)=p\left(x_{t} \mid x_{t-1}, u_{t}\right)" />
+Given the observation model <img src="https://latex.codecogs.com/svg.image?p\left(z_{t}&space;\mid&space;x_{0:&space;t},&space;z_{1:&space;t-1},&space;u_{1:&space;t}\right)=p\left(z_{t}&space;\mid&space;x_{t}\right)" title="p\left(z_{t} \mid x_{0: t}, z_{1: t-1}, u_{1: t}\right)=p\left(z_{t} \mid x_{t}\right)" /> and the dynamics model <img src="https://latex.codecogs.com/svg.image?p\left(x_{t}&space;\mid&space;x_{0:&space;t-1},&space;z_{1:&space;t-1},&space;u_{1:&space;t}\right)=p\left(x_{t}&space;\mid&space;x_{t-1},&space;u_{t}\right)" title="p\left(x_{t} \mid x_{0: t-1}, z_{1: t-1}, u_{1: t}\right)=p\left(x_{t} \mid x_{t-1}, u_{t}\right)" />
 
-Please derive how to estimate the belief over xt, that is, <img src="https://latex.codecogs.com/svg.image?\operatorname{bel}\left(x_{t}\right)=P\left(x_{t}&space;\mid&space;u_{1},&space;z_{1},&space;\ldots,&space;u_{t},&space;z_{t}\right)" title="\operatorname{bel}\left(x_{t}\right)=P\left(x_{t} \mid u_{1}, z_{1}, \ldots, u_{t}, z_{t}\right)" />, with the terms of <img src="https://latex.codecogs.com/svg.image?\inline&space;\operatorname{bel}\left(x_{t-1}\right)" title="\inline \operatorname{bel}\left(x_{t-1}\right)" />, observation and dynamics models.
+Please derive how to estimate the belief over <img src="https://latex.codecogs.com/svg.image?{x_t}" title="{x_t}" />, that is, <img src="https://latex.codecogs.com/svg.image?bel\left(&space;{{x_t}}&space;\right)&space;=&space;p\left(&space;{{x_t}\mid&space;{u_1},{z_1},&space;\ldots&space;,{u_t},{z_t}}&space;\right)" title="bel\left( {{x_t}} \right) = p\left( {{x_t}\mid {u_1},{z_1}, \ldots ,{u_t},{z_t}} \right)" />, with the terms of <img src="https://latex.codecogs.com/svg.image?bel\left(&space;{{x_{t&space;-&space;1}}}&space;\right)" title="bel\left( {{x_{t - 1}}} \right)" />, observation and dynamics models.
+
+## Question 5
+
+Given the observation model <img src="https://latex.codecogs.com/svg.image?p\left(z_{t}&space;\mid&space;x_{0:&space;t},&space;z_{1:&space;t-1},&space;u_{1:&space;t}\right)=p\left(z_{t}&space;\mid&space;x_{t}\right)" title="p\left(z_{t} \mid x_{0: t}, z_{1: t-1}, u_{1: t}\right)=p\left(z_{t} \mid x_{t}\right)" /> and the dynamics model <img src="https://latex.codecogs.com/svg.image?p\left(x_{t}&space;\mid&space;x_{0:&space;t-1},&space;z_{1:&space;t-1},&space;u_{1:&space;t}\right)=p\left(x_{t}&space;\mid&space;x_{t-1},&space;u_{t}\right)" title="p\left(x_{t} \mid x_{0: t-1}, z_{1: t-1}, u_{1: t}\right)=p\left(x_{t} \mid x_{t-1}, u_{t}\right)" />
+
+Please derive how to estimate the belief over <img src="https://latex.codecogs.com/svg.image?x_{0:&space;t}" title="x_{0: t}" />, that is, <img src="https://latex.codecogs.com/svg.image?bel\left(&space;{{x_{0:t}}}&space;\right)&space;=&space;p\left(&space;{{x_{0:t}}\mid&space;{u_1},{z_1},&space;\ldots&space;,{u_t},{z_t}}&space;\right)" title="bel\left( {{x_{0:t}}} \right) = p\left( {{x_{0:t}}\mid {u_1},{z_1}, \ldots ,{u_t},{z_t}} \right)" />, with the terms of <img src="https://latex.codecogs.com/svg.image?bel\left(&space;{{x_{0:t&space;-&space;1}}}&space;\right)" title="bel\left( {{x_{0:t - 1}}} \right)" />, observation and dynamics models.
+
