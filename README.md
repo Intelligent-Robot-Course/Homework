@@ -4,5 +4,5 @@
 
 The homework for the intelligent robot course.
 
-- [Homework Ⅰ-probability fundamentals](https://github.com/Intelligent-Robot-Course/Homework/tree/main/week2)
+- [Homework Ⅰ-probability fundamentals](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw1)
 
