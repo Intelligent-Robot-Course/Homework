@@ -20,15 +20,18 @@
 
 - (a) How to generate uniform, perpendicular, attractive, repulse, tangential forces for a robot and obstacles with known positions? Provide related mathematical formulas.
 
-- (b) Please simulate the above force fields in Figure 1, and plot the vector force fields. Provide codes and plots of force fields.
+- (b) Please simulate the above force fields in following Figure, and plot the vector force fields. Provide codes and plots of force fields.
 
 - (c) Please simulate the motions of a robot for given those force fields. Provide codes and plots of simulation results.
+
+<div align=center> <img src=image/f2.bmp/> </div>
 
 ## Question 3 - Extra Credit
 
 Simulate a robot can reach the goal without sticking into a local trap.
 
-**Requirements:** Provide codes and simulation results with parameter optimization and analysis. 
+**Requirements:** Provide codes and simulation results with parameter optimization and analysis.
+
 
 
 
