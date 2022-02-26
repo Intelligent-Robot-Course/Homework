@@ -24,13 +24,17 @@
 
 - (c) Please simulate the motions of a robot for given those force fields. Provide codes and plots of simulation results.
 
-<div align=center> <img src=image/f2.bmp/> </div>
+<div align=center> <img src=image/f2.bmp width=50%/> </div>
 
 ## Question 3 - Extra Credit
 
 Simulate a robot can reach the goal without sticking into a local trap.
 
+<div align=center> <img src=image/f3.bmp width=50%/> </div>
+
 **Requirements:** Provide codes and simulation results with parameter optimization and analysis.
+
+
 
 
 
