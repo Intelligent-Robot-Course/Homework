@@ -10,3 +10,25 @@
 
 ## Question 1
 
+- (a) Imagine you want your robot to perform navigation tasks, which approach would you choose?
+
+- (b) What are the benefits of the behavior based paradigm?
+
+- (c) Which approaches will win in the long run?
+
+## Question 2
+
+- (a) How to generate uniform, perpendicular, attractive, repulse, tangential forces for a robot and obstacles with known positions? Provide related mathematical formulas.
+
+- (b) Please simulate the above force fields in Figure 1, and plot the vector force fields. Provide codes and plots of force fields.
+
+- (c) Please simulate the motions of a robot for given those force fields. Provide codes and plots of simulation results.
+
+## Question 3 - Extra Credit
+
+Simulate a robot can reach the goal without sticking into a local trap.
+
+**Requirements:** Provide codes and simulation results with parameter optimization and analysis. 
+
+
+
