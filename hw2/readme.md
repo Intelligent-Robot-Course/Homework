@@ -6,5 +6,7 @@
 
 **Written Homeworks.** All calculation problems must be written on single-sided A4 paper. The scan version of the paper will also be accepted.
 
-**Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5). Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX). Your code should be run step-by-step without any error. Real-time animation is recommended.
+**Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple simulator. Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX). Your code should be run step-by-step without any error. Real-time animation is recommended.
+
+## Question 1
 
