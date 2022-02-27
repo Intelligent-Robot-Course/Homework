@@ -1,6 +1,6 @@
 # Homework 2
 
--- Course: *Intelligent Robot – Professor: Qi Hao*
+-- Course: *Intelligent Robotics – Professor: Qi Hao*
 
 **Homework Submission Instructions** Please write up your responses to the following problems clearly and concisely. We require you to write up your responses with A4 paper. You are allowed and encouraged to work together. You may discuss the homework to understand the problem and reach a solution in groups. However, each student must write down the solution independently. You must understand the solution well enough in order to reconstruct it by yourself. (This is for your own benefit: you have to take the exams alone.)
 
@@ -43,9 +43,9 @@ Simulate a robot can reach the goal without sticking into a local trap. Provide 
 
 ## <span id="jump">Coding instruction</span>
 
-All the assignments are performed based on [intelligent robot simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu), which provides the common robot motion model and plot functions that we can focus on the robotics algorithm directly.
+All the assignments are performed based on [intelligent robotics simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu), which provides the common robot motion model and plot functions that we can focus on the robotics algorithm directly.
 
-### Install the intelligent robot simulator
+### Install the intelligent robotics simulator
 
 ```
 git clone -b edu https://github.com/hanruihua/intelligent-robot-simulator.git
