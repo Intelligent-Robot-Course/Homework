@@ -24,9 +24,13 @@
 
 <div align=center> <img src=image/f2.bmp width=50%/> </div>
 
-| Uniform | Perpendicular | Attractive | Repulsive | Tangential |
-| :----:  | :----:        | :----:     |  :----:   | :----:     |
-| ![Uniform](image/uniform.gif) | ![Perpendicular](image/perpendicular.gif) | ![Attractive](image/attractive.gif)  | ![Repulsive](image/repulsive.gif) | ![Tangential](image/tangential.gif) |
+| Uniform | Perpendicular | Attractive |
+| :----:  | :----:        | :----:     | 
+| ![Uniform](image/uniform.gif) | ![Perpendicular](image/perpendicular.gif) | ![Attractive](image/attractive.gif)  |
+
+| Repulsive  | Tangential |
+|  :----:   | :----:     |
+| <div align=center> <img src=image/repulsive.gif width=50%/> </div> | <div align=center> <img src=image/tangential.gif width=50%/> </div> |
 
 ## Question 3 - Extra Credit
 
