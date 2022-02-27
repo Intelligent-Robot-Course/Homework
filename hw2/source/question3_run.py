@@ -16,6 +16,7 @@ for i in range(1000):
 
 
     ## please complete this part to solve question3 based on the force defined in question2 
+    line_list = env.obs_line_states
 
     #    ...
 
@@ -24,7 +25,7 @@ for i in range(1000):
     env.robot_step(pf_force)
     env.render(show_traj=True)
 
-    if env.collision_check() or env.arrive_check():
+    if env.collision_check() or env.arrive_check():  # check whether there are 
         break
 
 if animation:

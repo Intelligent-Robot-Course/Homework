@@ -20,11 +20,11 @@
 
 - (a) How to generate uniform, perpendicular, attractive, repulse, tangential forces for a robot and obstacles with known positions? Provide related mathematical formulas.
 
-- (c) Please simulate the motions of a robot with the given force fields from the following figure. 
+- (b) Please simulate the motions of a robot with the given force fields from the following figure. 
 
 <div align=center> <img src=image/f2.bmp width=50%/> </div>
 
-Provide codes and plots of simulation results as shown below. You can follow the instruction to complete this question. 
+Provide codes and plots of simulation results. You can follow the [instruction](#jump_q2) to complete the file *potential_fields.py* and run *question2_run.py* in source folder to generate the gif as shown below: 
 
 | Uniform | Perpendicular | Attractive |
 | :----:  | :----:        | :----:     | 
@@ -36,12 +36,10 @@ Provide codes and plots of simulation results as shown below. You can follow the
 
 ## Question 3 - Extra Credit
 
-Simulate a robot can reach the goal without sticking into a local trap.
-[Coding instruction](#jump)
+Simulate a robot can reach the goal without sticking into a local trap. Provide codes and plots of simulation results. You can follow the [instruction](#jump_q3) to complete the file *question3_run.py* in the source folder to generate the animation as shown below:
 
 <div align=center> <img src=image/potential_field.gif width=50%/> </div>
 
-**Requirements:** Provide codes and simulation results with parameter optimization and analysis.
 
 ## <span id="jump">Coding instruction</span>
 
@@ -57,13 +55,32 @@ pip install -e .
 
 **Note**: Please confirm that this repository is under the *edu* branch.
 
-### Code for question2
+### Common used API
+
+- *env.robot.state:* 2*1 matrix, The position of the robot with x and y
+- *env.obs_line_states:* A list of line coordinates. Each line includes the position of two points (x1, y1, x2, y2). 
+- *env.robot.goal:* 3*1 matrix, The goal of the robot with x, y and theta.
+- *env.render():* Show current figure at each step
 
 
+### <span id="jump_q2">Code for question2</span>
 
+There are three files for question2 in the source folder, *[question2.yaml](source/question2.yaml)*, *[question2_run.py](source/question2_run.py)*, and *[potential_fields.py](source/potential_fields.py)*. 
 
+- First is the parameter set for the simulation environment. 
+- Second is the run file to show perform the robot and potential field algorithm.
+- Third is the potential field class which defines the primitive potential fields as shown in the mentioned figure. 
 
-### Code for question3
+You should complete the file *[potential_fields.py](source/potential_fields.py)* and run *[question2_run.py](source/question2_run.py)* to show the simulation results. You can set the parameter *animation = True* in *question2_run.py* to generate the gif file. In addition, you can change the number of arguments of coefficient in the *potential_fields.py* by your need.  
+
+**Note1**: *we provide the function which calculates the minimum distance between a point and a segment.* 
+**Note2**: *The robot is with omnidirectional wheel for simplicity*
+
+### <span id="jump_q2">Code for question3</span>
+
+There are two files for question3 in the source folder, *[question3.yaml](source/question3.yaml)*, *[question3_run.py](source/question3_run.py)*. The potential_fields.py that completed in question2 can also be used for this task. You should complete the file *[question3_run.py](source/question3_run.py)* to simulate a robot to reach the goal without sticking into a local trap. 
+
+**Note**: *The robot is with omnidirectional wheel for simplicity*
 
 
 
