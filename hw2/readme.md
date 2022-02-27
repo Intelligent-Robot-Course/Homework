@@ -20,19 +20,37 @@
 
 - (a) How to generate uniform, perpendicular, attractive, repulse, tangential forces for a robot and obstacles with known positions? Provide related mathematical formulas.
 
-- (b) Please simulate the above force fields in following Figure, and plot the vector force fields. Provide codes and plots of force fields.
-
-- (c) Please simulate the motions of a robot for given those force fields. Provide codes and plots of simulation results.
+- (c) Please simulate the motions of a robot for given those force fields from the following figure. Provide codes and plots of simulation results as shown below:
 
 <div align=center> <img src=image/f2.bmp width=50%/> </div>
+
+| Uniform | Perpendicular | Attractive | Repulsive | Tangential |
+| :----:  | :----:        | :----:     |  :----:   | :----:     |
+| ![Uniform](image/uniform.gif) | ![Perpendicular](image/Perpendicular.gif) | ![Attractive](image/Attractive.gif)  | ![Repulsive](image/Repulsive.gif) | ![Tangential](image/Tangential.gif) |
 
 ## Question 3 - Extra Credit
 
 Simulate a robot can reach the goal without sticking into a local trap.
+[Coding instruction](#jump)
 
-<div align=center> <img src=image/f3.bmp width=50%/> </div>
+<div align=center> <img src=image/potential_field.gif width=50%/> </div>
 
 **Requirements:** Provide codes and simulation results with parameter optimization and analysis.
+
+## <span id="jump">Coding instruction</span>
+
+We provide a simple 
+
+
+### Install the intelligent robot simulator
+
+```
+git clone -b edu https://github.com/hanruihua/intelligent-robot-simulator.git
+cd intelligent-robot-simulator
+pip install -e .
+```
+
+### 
 
 
 
