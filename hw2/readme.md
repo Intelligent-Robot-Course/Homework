@@ -73,7 +73,7 @@ There are three files for question2 in the source folder, *[question2.yaml](sour
 
 You should complete the file *[potential_fields.py](source/potential_fields.py)* and run *[question2_run.py](source/question2_run.py)* to show the simulation results. You can set the parameter *animation = True* in *question2_run.py* to generate the gif file. In addition, you can change the number of arguments of coefficient in the *potential_fields.py* by your need.  
 
-**Note1**: *we provide the function which calculates the minimum distance between a point and a segment.* 
+**Note1**: *we provide the function which calculates the minimum distance between a point and a segment.*    
 **Note2**: *The robot is with omnidirectional wheel for simplicity*
 
 ### <span id="jump_q2">Code for question3</span>
