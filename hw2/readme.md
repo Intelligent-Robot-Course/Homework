@@ -28,7 +28,7 @@ Provide codes and plots of simulation results. You can follow the [instruction](
 
 | Uniform | Perpendicular | Attractive |
 | :----:  | :----:        | :----:     | 
-| <div align=center> <img src=image/uniform.gif width=80%/> </div> | <div align=center> <img src=image/perpendicular.gif width=80%/> </div> | <div align=center> <img src=image/Attractive.gif width=80%/> </div>  |
+| <div align=center> <img src=image/uniform.gif width=80%/> </div> | <div align=center> <img src=image/perpendicular.gif width=80%/> </div> | <div align=center> <img src=image/attractive.gif width=80%/> </div>  |
 
 | Repulsive  | Tangential |
 |  :----:   | :----:     |
