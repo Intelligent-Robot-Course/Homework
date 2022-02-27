@@ -43,7 +43,7 @@ Simulate a robot can reach the goal without sticking into a local trap. Provide 
 
 ## <span id="jump">Coding instruction</span>
 
-All the assignments are performed by [intelligent robot simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu), which provides common robot motion model and plot functions that we can focus on the robotics algorithm directly.
+All the assignments are performed based on [intelligent robot simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu), which provides the common robot motion model and plot functions that we can focus on the robotics algorithm directly.
 
 ### Install the intelligent robot simulator
 
