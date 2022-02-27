@@ -78,7 +78,7 @@ You should complete the file *[potential_fields.py](source/potential_fields.py)*
 
 ### <span id="jump_q2">Code for question3</span>
 
-There are two files for question3 in the source folder, *[question3.yaml](source/question3.yaml)*, *[question3_run.py](source/question3_run.py)*. The potential_fields.py that completed in question2 can also be used for this task. You should complete the file *[question3_run.py](source/question3_run.py)* to simulate a robot to reach the goal without sticking into a local trap. 
+There are two files for question3 in the source folder, *[question3.yaml](source/question3.yaml)*, *[question3_run.py](source/question3_run.py)*. The potential_fields.py that completed in question2 can also be used for this task. You should complete the file *[question3_run.py](source/question3_run.py)* to simulate a robot to reach the goal without sticking into a local trap. *hint: define the different parameters for the force of repulsive in the two sides of the lines*
 
 **Note**: *The robot is with omnidirectional wheel for simplicity*
 
