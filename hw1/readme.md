@@ -1,7 +1,7 @@
 
 # Homework Ⅰ
 
-*Course:Intelligent Robots (CS401) – Professor: Qi Hao*
+*Course:Intelligent Robotics (CS401) – Professor: Qi Hao*
 
 ### Question 1
 
