@@ -6,7 +6,7 @@
 
 **Written Homeworks.** All calculation problems must be written on single-sided A4 paper. The scan version of the paper will also be accepted.
 
-**Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple simulator. Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX). Your code should be run step-by-step without any error. Real-time animation is recommended.
+**Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple [robotics simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu). You can follow the [Coding instruction](#jump) to use this simulator to complete the coding part in question2 and question3. Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX). Your code should be run step-by-step without any error. Real-time animation is also recommended.
 
 ## Question 1
 
@@ -20,9 +20,11 @@
 
 - (a) How to generate uniform, perpendicular, attractive, repulse, tangential forces for a robot and obstacles with known positions? Provide related mathematical formulas.
 
-- (c) Please simulate the motions of a robot for given those force fields from the following figure. Provide codes and plots of simulation results as shown below:
+- (c) Please simulate the motions of a robot with the given force fields from the following figure. 
 
 <div align=center> <img src=image/f2.bmp width=50%/> </div>
+
+Provide codes and plots of simulation results as shown below. You can follow the instruction to complete this question. 
 
 | Uniform | Perpendicular | Attractive |
 | :----:  | :----:        | :----:     | 
@@ -43,8 +45,7 @@ Simulate a robot can reach the goal without sticking into a local trap.
 
 ## <span id="jump">Coding instruction</span>
 
-We provide a simple 
-
+All the assignments are performed by [intelligent robot simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu), which provides common robot motion model and plot functions that we can focus on the robotics algorithm directly.
 
 ### Install the intelligent robot simulator
 
@@ -54,7 +55,16 @@ cd intelligent-robot-simulator
 pip install -e .
 ```
 
-### 
+**Note**: Please confirm that this repository is under the *edu* branch.
+
+### Code for question2
+
+
+
+
+
+### Code for question3
+
 
 
 

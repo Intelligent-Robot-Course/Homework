@@ -1,0 +1,17 @@
+world:
+  world_height: 10
+  world_width: 10
+  step_time: 0.1
+
+robots:
+  robot_number: 1
+  robot_mode: 'omni'  # omni or diff    omnidirectional adn differential wheel 
+  robot_init_mode: 0 # 0 custom, 1 single row, 2, random, 3 circle
+  init_state_list: [[6, 4, 0]] # init state
+  goal_list: [[9, 6, 0]] # goal position of the robot
+  radius_list: [0.2] # radius of the robot
+  vel_max: [1.5, 1.5]   # maximum velocity
+  radius_exp: 0.1  # collision radius = radius + radius_exp
+
+obs_lines:
+  obs_line_states: [[5, 3, 7, 3], [7, 3, 7, 6], [7, 6, 5, 6]]
