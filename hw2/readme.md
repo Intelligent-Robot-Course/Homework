@@ -26,7 +26,7 @@
 
 | Uniform | Perpendicular | Attractive | Repulsive | Tangential |
 | :----:  | :----:        | :----:     |  :----:   | :----:     |
-| ![Uniform](image/uniform.gif) | ![Perpendicular](image/Perpendicular.gif) | ![Attractive](image/Attractive.gif)  | ![Repulsive](image/Repulsive.gif) | ![Tangential](image/Tangential.gif) |
+| ![Uniform](image/uniform.gif) | ![Perpendicular](image/perpendicular.gif) | ![Attractive](image/attractive.gif)  | ![Repulsive](image/repulsive.gif) | ![Tangential](image/tangential.gif) |
 
 ## Question 3 - Extra Credit
 
