@@ -5,7 +5,7 @@ import numpy as np
 from pathlib import Path
 
 # parameters
-potential = 'tangential' # uniform, perpendicular, attractive, repulsive, tangential
+potential = 'uniform' # uniform, perpendicular, attractive, repulsive, tangential
 
 animation = False # whether generate the animation
 image_path = Path(__file__).parent / 'image'  # image and animation path
