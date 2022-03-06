@@ -30,6 +30,7 @@ class dynamic_window_approach:
                 cost = self.cost_function(goal_pose, vx, vy, pre_traj, vel_cost_gain=v_gain, goal_cost_gain=g_gain, obstacle_cost_gain=o_gain)  # the object(cost) function for you to complete. you should complete this function for the homework question2
 
                 if astar_path is not None:
+                    # complete the astar_cost function for question3
                     astar_cost = self.astar_cost(pre_traj, astar_path)
                     cost += a_gain * astar_cost
 
@@ -71,24 +72,31 @@ class dynamic_window_approach:
     def cost_function(self, goal_pose, vx, vy, pre_traj, vel_cost_gain=1, goal_cost_gain=1, obstacle_cost_gain=1):
         # Calculate the cost of current pair of vx vy
         # you should complete the function for question2. (HintL the summary cost of the following functions)
+        # The cost include three parts: (1) the cost related to velocity, the maximize velocity is better 
+        # (2) cost realted to the goal, the closer position to the goal is better
+        # (3) cost related to the obstacle, move away from the obstacle is better
+
         print('you should complete the cost function')
         pass
         # return cost
 
     def vel_cost(self, vx, vy):
         # you should complete the function for question2
-        # the cost function about the velocity (hint: maximize velocity)
+        # the cost function about the velocity cost (hint: maximize the velocity is better, you can use the norm of this velocity)
         pass
 
     def cost_to_goal(self, pre_traj, goal):
         # you should complete the function for question2
-        # the cost to move to the goal
+        # the closer position to the goal is better (hint: use the position of the final point in the pre_traj to judge. )
+
         pass
         
 
     def cost_to_obstacle(self, pre_traj):
         # you should complete the function for question2
-        # the cost to the avoid the obstacles (hint: the minimum distance between the predicted trajectory and obstacle in grid map)
+        # the cost to the avoid the obstacles, move away from the obstacle is better 
+        # (hint: the minimum distance between the predicted trajectory and obstacle in grid map, 
+        # you can use the below function point_to_obstalce to calculate the distance with each point)
         pass
 
         
@@ -107,6 +115,7 @@ class dynamic_window_approach:
 
     def astar_cost(self, pre_traj, astar_path):
         # you should complete the function for question3
+        # related to the distance between the positions in pre_traj and points in astar_path
         print('you should complete the astar cost function')
         pass
         

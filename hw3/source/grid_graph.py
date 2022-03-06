@@ -6,7 +6,7 @@ from collections import namedtuple
 class grid_graph:
     def __init__(self, grid_map_matrix=None, xy_reso=0.1):
         self.grid_map = grid_map_matrix
-        self.node_tuple = namedtuple('graph_node', 'x, y, cost, parent') # each not type
+        self.node_tuple = namedtuple('graph_node', 'x, y, cost, parent') # each node type
         self.width = grid_map_matrix.shape[0]
         self.height = grid_map_matrix.shape[1]
         self.xy_reso = xy_reso
