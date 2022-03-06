@@ -1,6 +1,6 @@
 # Homework 3- Planning
 
--- Course: *Intelligent Robot – Professor: Qi Hao*
+-- Course: *Intelligent Robotics – Professor: Qi Hao*
 
 **Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple [robotics simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu). You can follow the [Coding instruction](#jump) to use this simulator to complete the coding question1,2,3. Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX, the scan version is also accepted). Your code should be run step-by-step without any error. Real-time animation is also encouraged.
 
@@ -26,7 +26,7 @@ Combine the astar and dwa to achieve the 5D planning under the given grid map. Y
 
 ## <span id="jump">Coding instruction</span>
 
-### Install the intelligent robot simulator
+### Install the intelligent robotics simulator
 
 ```
 git clone -b edu https://github.com/hanruihua/intelligent-robot-simulator.git
