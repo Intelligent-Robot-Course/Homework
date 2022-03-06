@@ -8,7 +8,7 @@ gif_path = Path(__file__).parent / 'gif'
 
 env = env_base(world_name = 'question3.yaml')
 pf = potential_fields()
-
+env.show()
 for i in range(1000):
 
     if animation:
@@ -19,8 +19,8 @@ for i in range(1000):
     line_list = env.obs_line_states
 
     #    ...
-
-    ## 
+    
+    ##  
 
     env.robot_step(pf_force)
     env.render(show_traj=True)
