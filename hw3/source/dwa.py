@@ -72,9 +72,9 @@ class dynamic_window_approach:
     def cost_function(self, goal_pose, vx, vy, pre_traj, vel_cost_gain=1, goal_cost_gain=1, obstacle_cost_gain=1):
         # Calculate the cost of current pair of vx vy
         # you should complete the function for question2. (HintL the summary cost of the following functions)
-        # The cost include three parts: (1) the cost related to velocity, the maximize velocity is better 
-        # (2) cost realted to the goal, the closer position to the goal is better
-        # (3) cost related to the obstacle, move away from the obstacle is better
+        # The cost include three parts: (1) the cost related to velocity, the maximize velocity is better, 10%
+        # (2) cost realted to the goal, the closer position to the goal is better, 30%
+        # (3) cost related to the obstacle, move away from the obstacle is better, 40%
 
         print('you should complete the cost function')
         pass
@@ -115,7 +115,7 @@ class dynamic_window_approach:
 
     def astar_cost(self, pre_traj, astar_path):
         # you should complete the function for question3
-        # related to the distance between the positions in pre_traj and points in astar_path
+        # related to the distance between the positions in pre_traj and points in astar_path, 20%
         print('you should complete the astar cost function')
         pass
         
