@@ -29,7 +29,7 @@ class Astar:
             # parts: (1) get current node with priority (using frontier.get()[1])  
             # (2) check whether current node is the goal node (using graph.node_equal) 
             # (3) explore the neighbors of current node (using graph.neighbors)
-            # (4) if the neighbor node is not in the next_vis: put that in the frontier with priority and append that in the next_vis.  (priority= cost_so_far + heuristic)
+            # (4) if the neighbor node is not in the next_vis (and cur_vis): put that in the frontier with priority and append that in the next_vis.  (priority= cost_so_far + heuristic)
             # (5) if the neighbor node is in the next_vis: check whether cost so far is less than that in the next_vis to determine whether put it in the frontier
             # (6) return the node when it is in the goal position.
             pass
