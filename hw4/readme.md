@@ -48,7 +48,7 @@ There are five files for this question in the source folder, *[question_run.py](
 - *question_run.py* is the main program you should run
 - **[mdp.py](source/mdp.py)** is the file to perform Markov Decision Process. You should complete the functions include value iteration and policy iteration in this file for the coding task.
 - *grid_map.py* is the file that defines the class about the grid map for you to use.
-- map_matrix.npy and reward_matrix.npy define the map and the reward in each grid.
+- *map_matrix.npy* and *reward_matrix.npy* define the map and the reward in each grid.
 
 You should complete the file **[mdp.py](source/mdp.py)** and run *question_run.py* to show the simulation results. You can set the parameter *animation = True* in *question_run.py* to generate the animation such as the follows.
 
