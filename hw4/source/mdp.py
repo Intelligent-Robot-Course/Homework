@@ -51,7 +51,7 @@ class mdp:
         return interate_done
 
 
-    def value_interation(self, threshold=0.01):
+    def value_iteration(self, threshold=0.01):
         
         ## please complete this function by 1. calculating the policy value 2. completing the judgement condition indicator delta
         # (1) The value iteration under current policy matrix

@@ -6,11 +6,7 @@
 
 ----
 
-## Question
-
-Please find the optimal path under a given grid map with reward using Markov Decision Process (MDP)
-
-**Note:**
+## rid Map Environment
 
 - white: the start position 
 - red: the goal position
@@ -23,6 +19,19 @@ Please find the optimal path under a given grid map with reward using Markov Dec
 - over the bound: -5
 
 <div align=center> <img src=image/mdp.png width=50%/> </div>
+
+
+## Question1  
+
+Please simulate the value iteration algorithm to calculate the value for a given policy.  
+
+## Question2
+
+Please simulate the policy iteration algorithm to improve a policy under the given value function. 
+
+## Question3
+
+Please find the optimal path under a given grid map environment with reward using Markov Decision Process (MDP)
 
 ## <span id="jump">Coding instruction</span>
 
@@ -41,16 +50,18 @@ pip install -e .
 
 **Note3:** If you have installed this simulator, you can use *git pull* to fetch the code update.
 
-### Code for question
+### Code for questions
 
-There are five files for this question in the source folder, *[question_run.py](source/question_run.py)*, *[mdp.py](source/mdp.py)*, *[grid_map.py](source/grid_map.py)*, *[map_matrix.npy](source/map_matrix.npy)*, and *[reward_matrix.npy](source/reward_matrix.npy)*
+There are seven files for these questions in the source folder, *[question_run1.py](source/question_run1.py)*, *[question_run2.py](source/question_run2.py)*, *[question_run3.py](source/question_run3.py)*, *[mdp.py](source/mdp.py)*, *[grid_map.py](source/grid_map.py)*, *[map_matrix.npy](source/map_matrix.npy)*, and *[reward_matrix.npy](source/reward_matrix.npy)*
 
-- *question_run.py* is the main program you should run
-- **[mdp.py](source/mdp.py)** is the file to perform Markov Decision Process. You should complete the functions include value iteration and policy iteration in this file for the coding task.
+- *question_run1.py* is the main program you should run for question1
+- *question_run2.py* is the main program you should run for question2
+- *question_run3.py* is the main program you should run for question3
+- **[mdp.py](source/mdp.py)** is the file to perform Markov Decision Process. You should complete the functions include value iteration and policy iteration in this file for question1 and question2 respectively.
 - *grid_map.py* is the file that defines the class about the grid map for you to use.
 - *map_matrix.npy* and *reward_matrix.npy* define the map and the reward in each grid.
 
-You should complete the file **[mdp.py](source/mdp.py)** and run *question_run.py* to show the simulation results. You can set the parameter *animation = True* in *question_run.py* to generate the animation such as the follows.
+You should complete the file **[mdp.py](source/mdp.py)** for question1 and question2, and *[question_run3.py](source/question_run3.py)* for the question3 to show the simulation results (as follows). You can set the parameter *animation = True* in *question_run.py* to generate the animation such as the follows.
 
 <div align=center> <img src=image/mdp.gif width=50%/> </div>
 
