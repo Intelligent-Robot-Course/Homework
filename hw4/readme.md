@@ -19,7 +19,7 @@ Please find the optimal path under a given grid map with reward using Markov Dec
 
 - obstacle reward: -10
 - goal reward: 10
-- others: -1
+- other reward: -1
 - over the bound: -5
 
 <div align=center> <img src=image/mdp.png width=50%/> </div>
