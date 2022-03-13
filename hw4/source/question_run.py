@@ -32,7 +32,6 @@ for i in range(300):
 
 # policy test
 cur_index = grid_map.start_index
-
 for i in range(300):
     
     grid_map.draw_map()
@@ -42,7 +41,7 @@ for i in range(300):
     action_index = np.argmax( mdp.policy_matrix[ cur_index[0], cur_index[1] ] )
     cur_index, _, _, done = grid_map.step(cur_index, action_index)
     grid_map.set_path(cur_index)
-    
+
     if done: 
         print('done')
         break
@@ -50,18 +49,6 @@ for i in range(300):
 if animation: env.save_ani(image_path, gif_path, ani_name='mdp', keep_len=10)
 
 grid_map.show_map()
-
-
-
-
-
-
-
-
-
-
-# map = grid_map(map_matrix)
-# map.show_map()
 
 
 
