@@ -6,7 +6,7 @@
 
 ----
 
-## rid Map Environment
+## Grid Map Environment
 
 - white: the start position 
 - red: the goal position
