@@ -42,7 +42,7 @@ where
 Least square method can be used to solve this linear equation and the solver is:
 <img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}&space;=&space;(A^TA)^{-1}(A^T\textbf{b})" title="https://latex.codecogs.com/svg.image?\inline \textbf{X} = (A^TA)^{-1}(A^T\textbf{b})" />
 
-
+under editing......
 
  
 
