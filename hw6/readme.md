@@ -65,5 +65,5 @@ Please use CMA-ES algorithm to solve the localization problem, you can refer to 
 
 **Note2:** Given the coordinates of a finite number of radio stations, and given their distances to the source (derived from the intensities of the signal they received in a previous step) computes the most probable coordinates of the source, please complete the **error** function in **[optimization_based_solver.py](source/optimization_based_solver.py)**.
 
-**Note3** Please complete the minimization section of function **gps_solve** in the file **[optimization_based_solver.py](source/optimization_based_solver.py)**
+**Note3:** Please complete the minimization section of function **gps_solve** in the file **[optimization_based_solver.py](source/optimization_based_solver.py)**
 
