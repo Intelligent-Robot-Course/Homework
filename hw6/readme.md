@@ -48,7 +48,12 @@ Least square method can be used to solve this linear equation and the solver is:
 
  ## Question2
 However, even with accurate sensors, it is unlikely that three circles would intersect at exactly the same point at which the STA is located. This means that attempts to tackle this problem analytically will almost always fail. Instead, an optimization-based approach can be used; it infers the STA's location by finding the point which minimizes the squared euclidean distances between the STA and all the APs.
-Please formulate an error function which calculates the euclidean distance between the STA and all APs.
+Please **formulate an error function** which calculates the euclidean distance between the STA and all APs.
+
+## Question3 
+This problem is not convex. It is also worth noting that gradeint-based optimization methods such as [Gauss-Newton(GN)](https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm) and [Levenberg–Marquardt (LM)](https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm#:~:text=In%20mathematics%20and%20computing%2C%20the,in%20least%20squares%20curve%20fitting.) algorithm used require a Jacobian (gradient) function. Thus, in this homework, we solve the problem using numerical optimization methods such as neirgh and [downhill simplex method](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method) it does not require Jacobian derivation. 
+
+
 
 
 ## Code for questions
