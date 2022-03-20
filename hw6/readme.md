@@ -1,5 +1,5 @@
 
-# Homework 6 - Multilateration-based location estimation
+# Homework 6 - Range-only based location
 
 -- Course: *Intelligent Robotics – Professor: Qi Hao*
 
@@ -8,12 +8,12 @@
 ----
 
 ## Overview
-Multilateration is the technique of using only distance measurements from stations to determine the location of a target, with no information about the direction from which this distance was measured. Given a coordinate and a measured distance, the set of all points for which the target could be located forms a circle; the coordinate is the circle center and the distance is the circle radius. Multilateration is a classic problem in navigation and target tracking, and also applicable to problems such as using time-domain reflectometry to determine locations of faults in modem connections.
-For example, a GPS receiver uses multilateration to determine its exact location from its measured distances from at least three satellites, each satellite is at the center of a sphere and where they all intersect is the position of the GPS receiver.
+Range only based localization is the technique of using only distance measurements from stations to determine the location of a target, with no information about the direction from which this distance was measured. Given a coordinate and a measured distance, the set of all points for which the target could be located forms a circle; the coordinate is the circle center and the distance is the circle radius. It is a classic problem in navigation and target tracking, and also applicable to problems such as using time-domain reflectometry to determine locations of faults in modem connections.
+For example, a GPS receiver uses trilateration (a type of range only based localization algorithms) to determine its exact location from its measured distances from at least three satellites, each satellite is at the center of a sphere and where they all intersect is the position of the GPS receiver.
 For detail of GPS localization, please refer to [How GPS Receivers Work - Trilateration vs Triangulation](https://gisgeography.com/trilateration-triangulation-gps/).
 
-## Multilateration of a single target
-To simplify the problem, here we only consider the Multilateration-based location in the two-dimensional plane.
+## Localization of a single target
+To simplify the problem, here we only consider the location in the two-dimensional plane.
 We simulates an 802.11az network consisting of a station (STA) and multiple access points (APs). With only one station (STA), there are infinitely many points on the circle where the targets could be located. With two stations whose distance circles intersect, the possible target location is reduced down to two possible points. With three or more stations that intersect at a single point, the target location can be isolated to that point.
 Thus, to estimate the position of a STA, the network requires a minimum of three APs. 
 
@@ -23,9 +23,11 @@ The following demo simulates a ranging measurement exchange for each STA-AP pair
 Suppose the known coordinates of AP1, AP2 and AP3 are <img src="https://latex.codecogs.com/svg.image?(x_1,y_1),&space;(x_2,y_2)" title="https://latex.codecogs.com/svg.image?(x_1,y_1), (x_2,y_2)" /> and <img src="https://latex.codecogs.com/svg.image?(x_3,y_3)" title="https://latex.codecogs.com/svg.image?(x_3,y_3)" />, respectively.
 Also, the calculated distances from AP1, AP2, and AP3 to the STA are <img src="https://latex.codecogs.com/svg.image?d_1,&space;d_2" title="https://latex.codecogs.com/svg.image?d_1, d_2" /> and <img src="https://latex.codecogs.com/svg.image?d_3" title="https://latex.codecogs.com/svg.image?d_3" />, respectively.
 
-**Then, the question is how to calculate the exact position <img src="https://latex.codecogs.com/svg.image?(x,y)" title="https://latex.codecogs.com/svg.image?(x,y)" /> of the STA in the current coordinte space.**
+## Question 1
+How to calculate the exact position <img src="https://latex.codecogs.com/svg.image?(x,y)" title="https://latex.codecogs.com/svg.image?(x,y)" /> of the STA in the current coordinte space? 
+*Note1:* Linear least square method can be used to solve the problem analytically.
 
-## Mathematical Derivation
+**Mathematical Derivation**
 The distance equations between known APs and unknown STA are as following:
 
 
@@ -42,8 +44,21 @@ where
 Least square method can be used to solve this linear equation and the solver is:
 <img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}&space;=&space;(A^TA)^{-1}(A^T\textbf{b})" title="https://latex.codecogs.com/svg.image?\inline \textbf{X} = (A^TA)^{-1}(A^T\textbf{b})" />
 
-under editing......
-
- 
 
 
+ ## Question2
+However, even with accurate sensors, it is unlikely that three circles would intersect at exactly the same point at which the STA is located. This means that attempts to tackle this problem analytically will almost always fail. Instead, an optimization-based approach can be used; it infers the STA's location by finding the point which minimizes the squared euclidean distances between the STA and all the APs.
+Please formulate an error function which calculates the euclidean distance between the STA and all APs.
+
+
+## Code for questions
+**Note1:** The question one is simple, please finish the function code in **[trilateration.py](source/trilateration.py)**  by refering to the above mathematical derivation.
+
+**Note2:** This problem is not convex. It is also worth noting that optimization methods used requires a Jacobian (gradient) function.
+This script named *optimization_least* implements a multilateration algorithm that, given the coordinates of a finite number of radio stations, and given their distances to the source (derived from the intensities of the signal they received in a previous step) computes the most probable coordinates of the source. Even if the distances computed for each station do not match (in terms of pointing to a single optimal solution) the algorithm finds the coordinates that minimize the error function and returns the most optimal solution possible.
+
+<img src="https://latex.codecogs.com/svg.image?\sum_{i=1}^{k}\left&space;(\left\|AP_i-X&space;\right\|_2-d_i\right&space;)^2" title="https://latex.codecogs.com/svg.image?\sum_{i=1}^{k}\left (\left\|AP_i-X \right\|_2-d_i\right )^2" />
+
+where <img src="https://latex.codecogs.com/svg.image?\inline&space;k" title="https://latex.codecogs.com/svg.image?\inline k" /> is the total number of APs.
+
+**[optimization_based_solver.py](source/optimization_based_solver.py)** is the file to optimize the target position. You should complete the error function in this file for the coding task.
