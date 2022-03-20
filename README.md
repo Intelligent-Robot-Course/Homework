@@ -9,5 +9,5 @@ The homework for the intelligent robotics course.
 - [Homework Ⅲ- Planning](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw3)
 - [Homework Ⅳ- Markov Decision Process](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw4)
 - [Homework V]
-- [Homework VI](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw6)
+- [Homework VI- Range-only based location](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw6)
 
