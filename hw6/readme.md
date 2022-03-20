@@ -1,5 +1,5 @@
 
-# Homework 6 - Range-only based location
+# Homework 6 - Range-only based localization
 
 -- Course: *Intelligent Robotics – Professor: Qi Hao*
 
