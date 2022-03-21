@@ -63,7 +63,7 @@ Please use CMA-ES algorithm to solve the localization problem, you can refer to 
 ## Code for questions
 **Note1:** The question one is simple, please finish the function code in **[trilateration.py](source/trilateration.py)**  by refering to the above mathematical derivation.
 
-**Note2:** Given the coordinates of a finite number of radio stations, and given their distances to the source (derived from the intensities of the signal they received in a previous step) computes the most probable coordinates of the source, please complete the **error** function in **[optimization_based_solver.py](source/optimization_based_solver.py)**.
+**Note2:** Given the coordinates of a finite number of radio stations, and given their distances to the source (derived from the intensities of the signal they received in a previous step) computes the most probable coordinates of the source, please complete the **quadratic** function in **[distance_only_localization.py](source/distance_only_localization.py)**.
 
-**Note3:** Please complete the minimization section of function **gps_solve** in the file **[optimization_based_solver.py](source/optimization_based_solver.py)**
+**Note3:** Please complete the optimization section of main function in the file **[distance_only_localization.py](source/distance_only_localization.py)**
 
