@@ -18,7 +18,7 @@ import numpy as np
 
 
 def quadratic(x, c, r):
-    return sum([(np.linalg.norm(x - c[i]) - r[i]) ** 2 for i in range(len(c))])
+    return **complete the error section**
 
 
 if __name__ == "__main__":
@@ -26,11 +26,4 @@ if __name__ == "__main__":
     distance_to_station = [0.1, 0.5, 0.5, 1.3]
     optimizer = CMA(mean=np.zeros(2), sigma=1.3)
 
-    for generation in range(50):
-        solutions = []
-        for _ in range(optimizer.population_size):
-            x = optimizer.ask()
-            value = quadratic(x, stations, distance_to_station)
-            solutions.append((x, value))
-            print(f"#{generation} {value} (x1={x[0]}, x2 = {x[1]})")
-        optimizer.tell(solutions)
+**finish the main function of cmaes optimization**
