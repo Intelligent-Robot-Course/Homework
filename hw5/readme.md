@@ -57,7 +57,11 @@ Experimental Demonstration:
 <div align=center> <img src=gif/Q_learning.gif width=70%/> </div>
 
 
-**Note:** The above demonstrations are only parts of the output policy. Normally, your solution is different but moving to the goal is necessary. 
+**Note:** The above demonstrations are only parts of the output policy. Normally, your solution should be different but moving to the goal is necessary.
+
+## Question4 - Extra Credit
+
+Please add the heuristic reward on the grid map, such as the DWA reward, A star reward, or distance-to-goal based reward learned form the previous lectures, to achieve a regular policy as you expected.
 
 ## <span id="jump">Coding instruction</span>
 
@@ -83,10 +87,10 @@ There are multiple files for these questions in the source folder.
 - *[question_run2.py](source/question_run2.py)*: is the main program you should run for question2
 - *[question_run3.py](source/question_run3.py)*: is the main program you should run for question3
 - *[reinforcement_learning.py](source/reinforcement_learning.py)*: is the library to implement three reinforcement learning algorithms: Monte Carlo Exploring Starts, Sarsa, and Q-learning. You should fill in this file to complete these three algorithms for the questions. 
--  *[grid_map.py](source/grid_map.py)*: is the file that defines the class about the grid map for you to use. 
+-  *[grid_map.py](source/grid_map.py)*: is the file that defines the class about the grid map for you to use. You can add heuristic reward here for extra question4. 
 - *[map_matrix.npy](source/map_matrix.npy)* and *[reward_matrix.npy](source/reward_matrix.npy)*: define the map and the reward in each grid.
 
-You should complement the parts between ---- in the file **[reinforcement_learning.py](source/reinforcement_learning.py)** for question1-3. You can set the parameter *animation = True* in *question_run.py* to generate the animation.
+You should complement the parts between ---- in the file **[reinforcement_learning.py](source/reinforcement_learning.py)** for question1-3, and the file **[grid_map.py](source/grid_map.py)** for extra question4. You can set the parameter *animation = True* in *question_run.py* to generate the animation.
 
 
 

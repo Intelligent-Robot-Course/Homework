@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from math import sqrt
 
 class grid_map:
-    def __init__(self, map_matrix=None, reward_matrix=None, start_index=(2, 2), goal_index=(16, 16), reward_bound=-5, reward_collision=-0.1):
+    def __init__(self, map_matrix=None, reward_matrix=None, start_index=(2, 2), goal_index=(16, 16), reward_bound=-5, reward_collision=-1):
         self.map_matrix = map_matrix
 
         self.state_space = map_matrix.shape[0:2]
@@ -51,6 +51,13 @@ class grid_map:
             done = True
         else:        
             reward = self.reward_matrix[next_x, next_y]
+
+            ## Extra Credit 
+            # ----------------------------------------------------------------
+            # You can add the heuristic reward here, such as the dwa reward, astar reward, or distance-to-goal reward learned from previous lectures to achieve a regular policy as you expected (such as keeping moving away from the obstacle.). In addition, if the self.reward_matrix[next_x, next_y] == reward_collision, there should the obstacle grid index.
+            pass
+            # example: reward = self.reward_matrix[next_x, next_y] + heuristic_reward
+            # ----------------------------------------------------------------
             done = False
 
         if next_x == self.goal_index[0] and next_y == self.goal_index[1]:
