@@ -23,7 +23,7 @@
 
 Please simulate the Monte Carlo Reinforcemenet learning with Exploring Starts under the given grid map environment. 
 
-Pseudocode: 
+Pseudocode:
 
 <div align=center> <img src=image/mc_es.png width=70%/> </div>
 
