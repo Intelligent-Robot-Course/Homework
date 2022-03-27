@@ -103,11 +103,9 @@ class reinforcement_leanring:
         G = 0    
 
         ## ----------------------------------------------------------------
-        #you should complement this part to calculate the state_action_returns depending on the state_action_list for monte_carlo_es
         state_action_list.reverse()
         for state, action, reward in state_action_list:
-            
-
+            #you should complement this part to calculate the state_action_returns depending on the state_action_list for monte_carlo_es
 
 
             pass
@@ -133,7 +131,7 @@ class reinforcement_leanring:
                 next_action = self.action_choose_greedy(state_action_value[next_state[0], next_state[1], :])
                 
                 ## ----------------------------------------------------------------
-                # You should complement this part to complete the Q value update function
+                # You should complement this part to complete the Q value update function (refer to the Pseudocode)
                 pass
 
 
@@ -144,7 +142,6 @@ class reinforcement_leanring:
                 cur_state = next_state
                 cur_action = next_action
 
-                # state_action_value[cur_state[0], cur_state[1], :] = 
                 if done:
                     break
 
@@ -178,7 +175,6 @@ class reinforcement_leanring:
                 cur_state = next_state
                 cur_action = next_action
 
-                # state_action_value[cur_state[0], cur_state[1], :] = 
                 if done:
                     break
 
