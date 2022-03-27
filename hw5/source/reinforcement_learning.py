@@ -2,7 +2,7 @@ import numpy as np
 from math import inf
 # different from MDP: Solve MDP when reward/transition models are unknown (no knowledge of MDP transitions / rewards.)
 
-class reinforcement_leanring:
+class reinforcement_learning:
     def __init__(self, state_space, action_space, grid_map, discount_factor=0.95, Epsilon=0.2):
         # state_space: (width, height)
         self.gamma = discount_factor

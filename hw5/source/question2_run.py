@@ -2,11 +2,11 @@ import numpy as np
 from grid_map import grid_map
 from ir_sim.env import env_base
 from pathlib import Path
-from reinforcement_learning import reinforcement_leanring
+from reinforcement_learning import reinforcement_learning
 import sys
 from pathlib import Path
 
-animation = True
+animation = False
 
 # path set
 cur_path = sys.path[0]
@@ -24,7 +24,7 @@ env = env_base(world_width = 20, world_height = 20)
 grid_map = grid_map(map_matrix=map_matrix, reward_matrix=reward_matrix, start_index=(2, 2))
 
 # run SARSA algorithm
-rl = reinforcement_leanring(grid_map.state_space, grid_map.action_space, grid_map)
+rl = reinforcement_learning(grid_map.state_space, grid_map.action_space, grid_map)
 state_action_value = rl.SARSA()
 
 # policy performance test
