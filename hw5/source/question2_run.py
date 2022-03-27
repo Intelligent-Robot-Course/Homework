@@ -23,6 +23,7 @@ reward_matrix = np.load(reward_path)
 env = env_base(world_width = 20, world_height = 20)
 grid_map = grid_map(map_matrix=map_matrix, reward_matrix=reward_matrix, start_index=(2, 2))
 
+# run SARSA algorithm
 rl = reinforcement_leanring(grid_map.state_space, grid_map.action_space, grid_map)
 state_action_value = rl.SARSA()
 
