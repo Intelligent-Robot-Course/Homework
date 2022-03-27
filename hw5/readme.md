@@ -83,9 +83,9 @@ pip install -e .
 
 There are multiple files for these questions in the source folder. 
 
-- *[question_run1.py](source/question_run1.py)*: is the main program you should run for question1
-- *[question_run2.py](source/question_run2.py)*: is the main program you should run for question2
-- *[question_run3.py](source/question_run3.py)*: is the main program you should run for question3
+- *[question_run1.py](source/question1_run.py)*: is the main program you should run for question1
+- *[question_run2.py](source/question1_run.py)*: is the main program you should run for question2
+- *[question_run3.py](source/question3_run.py)*: is the main program you should run for question3
 - *[reinforcement_learning.py](source/reinforcement_learning.py)*: is the library to implement three reinforcement learning algorithms: Monte Carlo Exploring Starts, Sarsa, and Q-learning. You should fill in this file to complete these three algorithms for the questions. 
 -  *[grid_map.py](source/grid_map.py)*: is the file that defines the class about the grid map for you to use. You can add heuristic reward here for extra question4. 
 - *[map_matrix.npy](source/map_matrix.npy)* and *[reward_matrix.npy](source/reward_matrix.npy)*: define the map and the reward in each grid.
