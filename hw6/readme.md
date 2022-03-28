@@ -145,6 +145,12 @@ Please implement the velocity-based odometry in Python.
 ### Task 2
 Please implement the encoder-based differential odometry in Python.
 
+### Task 3
+Running the velocity-based odometry with noise (by setting the bool switch in the function) and compare the ground truth trajectory and the estimated trajectory.
+
+### Task 4
+Running the encoder-based differential odometry with noise (by setting the bool switch in the function) and compare the ground truth trajectory and the estimated trajectory.
+
 ----
 ### Code for tasks
 **Note1**
