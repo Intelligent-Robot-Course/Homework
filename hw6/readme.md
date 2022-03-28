@@ -157,6 +157,7 @@ Please implement the encoder-based differential odometry in Python.
 -Implement the function of **calculate_odometry_velocity** in **[calculate_odometry.py](code/caclculate_odometry.py)**.
 
 **Note2**
+
 -Implement the function of **calculate_odometry_encoders** in **[calculate_odometry.py](code/caclculate_odometry.py)**.
 
 
