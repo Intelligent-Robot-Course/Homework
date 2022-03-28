@@ -153,12 +153,10 @@ Please implement the encoder-based differential odometry in Python.
 -forward.csv, backward.csv - motion length 1.15m
 -left_full_turn.csv, right_full_turn.csv - full angle rotation
 -square_right.csv, square_left.csv - square side length = 1.15m and return to initial pose
-
--Implement the function of **calculate_odometry_velocity** in **[calculate_odometry.py](code/caclculate_odometry.py)**.
+- Implement the function of **calculate_odometry_velocity** in **[calculate_odometry.py](code/caclculate_odometry.py)**.
 
 **Note2**
-
--Implement the function of **calculate_odometry_encoders** in **[calculate_odometry.py](code/caclculate_odometry.py)**.
+- Implement the function of **calculate_odometry_encoders** in **[calculate_odometry.py](code/caclculate_odometry.py)**.
 
 
 
