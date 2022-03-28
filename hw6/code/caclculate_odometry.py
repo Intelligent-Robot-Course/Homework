@@ -5,34 +5,42 @@ import csv
 from matplotlib import pyplot as plt
 
 
-def calculate_odometry_velocity(currentPos, velL, velR, deltaT):
+def calculate_odometry_velocity(currentPos, velL, velR, deltaT, noise = False, control_std = [0.01, 0.01]):
     """ Calculate odometry based on velocity readings
     Args:
         currentPos (np.mat): current position
         velL (float): velocity of left wheel
         velR (float): velocity of right wheel
         deltaT (float): time difference between two preceeding positions
+        noise: whether the input control data has noise
+        control_std: the level of noise added to the velocity
     Returns:
         (np.mat): updated position
     """
     L = 330.0
     A = np.mat([[np.cos(currentPos.item(2)) / 2.0, np.cos(currentPos.item(2)) / 2.0],
-                   [np.sin(currentPos.item(2)) / 2.0, np.sin(currentPos.item(2)) / 2.0],
-                   [1 / L, -1 / L]])
-    V = np.mat([[velR],
-                   [velL]])
-    V = V * deltaT
-    deltaPos = A * V
+                [np.sin(currentPos.item(2)) / 2.0, np.sin(currentPos.item(2)) / 2.0],
+                [1 / L, -1 / L]])
+
+    if noise == True:
+        V_noise = np.mat([[velR], [velL]]) + np.random.normal([[0], [0]], scale = [[control_std[0]], [control_std[1]]])
+    else:
+        V_noise = np.mat([[velR], [velL]])
+
+    V_noise = V_noise * deltaT
+    deltaPos = A * V_noise
     currentPos = currentPos + deltaPos
     return currentPos
 
 
-def calculate_odometry_encoders(currentPos, deltaL, deltaR):
+def calculate_odometry_encoders(currentPos, deltaL, deltaR, noise = False, control_std = [0.01, 0.01]):
     """Calculate odometry based on encoder readings
     Args:
         currentPos (np.mat): current position
         deltaL (int): shift readed on left encoder
         deltaR (int): shift readed on right encoder
+        noise: whether the input control data has noise
+        control_std: the level of noise added to the velocity
     Returns:
         (np.mat): updated position
     """
@@ -40,11 +48,16 @@ def calculate_odometry_encoders(currentPos, deltaL, deltaR):
     ticksPerRev = 76600
     d = 195
     A = np.mat([[np.cos(currentPos.item(2)) / 2.0, np.cos(currentPos.item(2)) / 2.0],
-                   [np.sin(currentPos.item(2)) / 2.0, np.sin(currentPos.item(2)) / 2.0],
-                   [1 / L, -1 / L]])
+                [np.sin(currentPos.item(2)) / 2.0, np.sin(currentPos.item(2)) / 2.0],
+                [1 / L, -1 / L]])
     V = np.mat([[(deltaR / ticksPerRev) * np.pi * d],
-                   [(deltaL / ticksPerRev) * np.pi * d]])
-    deltaPos = A * V
+                [(deltaL / ticksPerRev) * np.pi * d]])
+    if noise == True:
+        V_noise = V + np.random.normal([[0], [0]], scale=[[control_std[0]], [control_std[1]]])
+    else:
+        V_noise = V
+
+    deltaPos = A * V_noise
     currentPos = currentPos + deltaPos
     return currentPos
 
@@ -128,28 +141,29 @@ if __name__ == "__main__":
     pos_vel_y = []
     pos_enc_x = []
     pos_enc_y = []
-    
+
     with open(_file) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';', quotechar='|')
         prev_time = 0
         prev_enc_l = 0
         prev_enc_r = 0
         prev_enc_init = False
-        
+
         for row in reader:
             timestamp = timestamp_to_sec(row['#time'])
-            current_pos_vel = calculate_odometry_velocity(current_pos_vel, float(row['velL']), float(row['velR']), timestamp - prev_time)
+            current_pos_vel = calculate_odometry_velocity(current_pos_vel, float(row['velL']), float(row['velR']),
+                                                          timestamp - prev_time, True, [0.01, 0.01])
             pos_vel_x.append(current_pos_vel[0, 0])
             pos_vel_y.append(current_pos_vel[1, 0])
             prev_time = timestamp
-        
+
             if prev_enc_init == False:
                 prev_enc_l = float(row['posL'])
                 prev_enc_r = float(row['posR'])
                 prev_enc_init = True
-            
+
             delta_l, delta__r = calcualte_encoder_shift(row, prev_enc_l, prev_enc_r)
-            current_pos_enc = calculate_odometry_encoders(current_pos_enc, delta_l, delta__r)
+            current_pos_enc = calculate_odometry_encoders(current_pos_enc, delta_l, delta__r, True, [0.01, 0.01])
             pos_enc_x.append(current_pos_enc[0, 0])
             pos_enc_y.append(current_pos_enc[1, 0])
 
