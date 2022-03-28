@@ -138,6 +138,8 @@ where
 - <img src="https://latex.codecogs.com/svg.image?\inline&space;\upsilon&space;" title="https://latex.codecogs.com/svg.image?\inline \upsilon " /> - the robot's velocity obtained from the motion sensor.
 
 
+<div align=center> <img src=data/trajectories.png width=50%/> </div>
+
 ----
 ### Task 1
 Please implement the velocity-based odometry in Python.
