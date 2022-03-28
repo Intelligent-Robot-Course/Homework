@@ -137,7 +137,7 @@ where
 
 - <img src="https://latex.codecogs.com/svg.image?\inline&space;\upsilon&space;" title="https://latex.codecogs.com/svg.image?\inline \upsilon " /> - the robot's velocity obtained from the motion sensor.
 
-
+Notice that the input and observation vector includes sensor noise, thus the estimated trajectory will have errors compared to its ground truth trajectory, the following image shows the comparison between estimated trajectory and ground truth:
 <div align=center> <img src=data/trajectories.png width=50%/> </div>
 
 ----
