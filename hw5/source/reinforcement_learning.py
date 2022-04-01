@@ -81,7 +81,7 @@ class reinforcement_learning:
 
             # prevent the dilemma
             if next_state in visit_state:
-                reward = self.grid_map.reward_collision
+                reward = -0.1
             
             state_action_list.append( (cur_state, cur_action, reward) )
             visit_state.add(cur_state)

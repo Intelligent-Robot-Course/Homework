@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from math import sqrt
 
 class grid_map:
-    def __init__(self, map_matrix=None, reward_matrix=None, start_index=(2, 2), goal_index=(16, 16), reward_bound=-5, reward_collision=-1):
+    def __init__(self, map_matrix=None, reward_matrix=None, start_index=(2, 2), goal_index=(16, 16), reward_bound=-5, reward_collision=-0.1):
         self.map_matrix = map_matrix
 
         self.state_space = map_matrix.shape[0:2]
