@@ -154,7 +154,9 @@ Running the velocity-based odometry with noise (by setting the bool switch in th
 Running the encoder-based differential odometry with noise (by setting the bool switch in the function) and compare the ground truth trajectory and the estimated trajectory.
 
 ### Extra credit
-Please implement the ICC-based differential drive model 
+Please implement the ICC-based differential drive model：
+
+<div align=center> <img src=gif/1648955007452.jpg width=50%/> </div>
 
 ----
 ### Code for tasks
