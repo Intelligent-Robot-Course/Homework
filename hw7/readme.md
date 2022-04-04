@@ -80,10 +80,7 @@ You will use the particle filter algorithm to locate the robot based on the dist
 
 - Compute Estimate: Optionally, compute weighted mean and covariance of the set of particles to get a state estimate.
 
-
-
-
-### calculate covariance matrix from particles
+You can refer to [Tutorial of particle filter ](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/12-Particle-Filters.ipynb) for better understanding and python implementation of particle filter.
 
 
 ----
