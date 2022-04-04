@@ -105,4 +105,4 @@ Please implement the "predict" and "update" function in the code [kalman-filter.
 
 ## Note for tasks
 The covariance matrix from particles is calculated as following:
-<div align=left> <img src=sources/animation.gif width=60%/> </div>
+<div align=left> <img src=sources/cov_pf.png width=40%/> </div>
