@@ -66,11 +66,30 @@ The comparisons between the odometry, GPS, filter and ground truth are shown in 
 <div align=left> <img src=sources/kalman_compare.png width=40%/> </div>
 
 ## Particle filter 2D localization
+In a 2D map with some landmarks, a robot moves with velocity-based motion model and can measure its relative distances from nearby landmarks.
+You will use the particle filter algorithm to locate the robot based on the distance measurements.
+
+## Generic Particle Filter Algorithm
+- Randomly generate a bunch of particles: particles can have position, heading, and/or whatever other state variable you need to estimate. Each has a weight (probability) indicating how likely it matches the actual state of the system. Initialize each with the same weight.
+
+- Predict next state of the particles: Move the particles based on how you predict the real system is behaving.
+
+- Update: Update the weighting of the particles based on the measurement. Particles that closely match the measurements are weighted higher than particles which don't match the measurements very well.
+
+- Particle Resampling: Discard highly improbable particle and replace them with copies of the more probable particles.
+
+- Compute Estimate: Optionally, compute weighted mean and covariance of the set of particles to get a state estimate.
 
 
-### Task 1
+
+
+### calculate covariance matrix from particles
+
+
+----
+## Task 1
 Please derivate the predcition and update process of kalman filter.
 
-### Task 2
+## Task 2
 Please implement the "predict" and "update" function in the code [kalman-filter.py](code/kalman-filter.py)
 
