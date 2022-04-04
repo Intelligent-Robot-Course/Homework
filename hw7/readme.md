@@ -8,8 +8,8 @@
 
 
 ## Overview
-You will be implementing a 2-Dimensional Kalman Filter for constant velocity model.
-Corresponding code skeltons are provided for you to implement the filter. Also, the visulization of the filter are provided in the framework.
+You will be implementing a 2-Dimensional Kalman Filter for constant velocity model and particle filter for 2D robot localization using measurements from landmarks.
+Corresponding code skeltons are provided for you to implement the filter. Also, the visulization of the two filters are provided in the framework.
 
 
 ## 2D Kalman Filter with Constant Velocity Model
@@ -19,7 +19,19 @@ A simulated scenario where we consider a robot in 2D and use odometry for predic
 
 ### Velocity-based 2D robot motion model 
 
- 
+ This is a sensor fusion localization with Particle Filter(PF).
+
+The blue line is true trajectory, the black line is dead reckoning trajectory,
+
+and the red line is estimated trajectory with PF.
+
+In a 2D map with distributed landmarks, we assume that the robot can measure a distance from landmarks, 
+
+This measurements are used for PF localization.
+
+
+
+
 Suppose the robot has a state vector includes 3 states at time <img src="https://latex.codecogs.com/svg.image?\inline&space;t" title="https://latex.codecogs.com/svg.image?\inline t" />:
 
 <img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf&space;X_t&space;=&space;\begin{bmatrix}x_t&space;\\y_t&space;\\\theta_t\end{bmatrix}" title="https://latex.codecogs.com/svg.image?\inline \textbf X_t = \begin{bmatrix}x_t \\y_t \\\theta_t\end{bmatrix}" />
@@ -52,6 +64,8 @@ The initial uncertanty for the motion noise and observation noise are defined in
 The comparisons between the odometry, GPS, filter and ground truth are shown in the following figure:
 
 <div align=left> <img src=sources/kalman_compare.png width=40%/> </div>
+
+## Particle filter 2D localization
 
 
 ### Task 1
