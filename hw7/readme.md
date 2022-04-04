@@ -82,6 +82,7 @@ You will use the particle filter algorithm to locate the robot based on the dist
 
 You can refer to [Tutorial of particle filter ](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/12-Particle-Filters.ipynb) for better understanding and python implementation of particle filter.
 
+<div align=left> <img src=sources/animation.gif width=40%/> </div>
 
 ----
 ## Task 1
