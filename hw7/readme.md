@@ -8,12 +8,12 @@
 
 
 ## Overview
-You will be implementing a 2-Dimensional Kalman Filter for constant velocity model and also a 2D particle filter.
+You will be implementing a 2-Dimensional Kalman Filter for constant velocity model.
 Corresponding code skeltons are provided for you to implement the two filters. Also, the visulization of the filters are provided in the framework.
 
 
 ## 2D Kalman Filter with Constant Velocity Model
-A simple kalman filter implementation in python. A simulated scenario where we consider a robot in 2D and use odometry for prediction and mocked GPS measurement for evaluation.
+A simulated scenario where we consider a robot in 2D and use odometry for prediction and mocked GPS measurement for evaluation.
 
 ## motion model and obervation motion model.
 
