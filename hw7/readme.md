@@ -9,7 +9,7 @@
 
 ## Overview
 You will be implementing a 2-Dimensional Kalman Filter for constant velocity model.
-Corresponding code skeltons are provided for you to implement the two filters. Also, the visulization of the filters are provided in the framework.
+Corresponding code skeltons are provided for you to implement the filter. Also, the visulization of the filter are provided in the framework.
 
 
 ## 2D Kalman Filter with Constant Velocity Model
