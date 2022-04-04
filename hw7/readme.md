@@ -101,7 +101,7 @@ Please derivate the predcition and update process of kalman filter.
 ## Task 2
 Please implement the "predict" and "update" function in the code [kalman-filter.py](code/kalman-filter.py)
 
-## Task 3
+## Task 3 Please implement the "re-sampling" and "weight calculation" parts in [particle_filter.py](code/particle_filter.py)
 
 ## Note for tasks
 The covariance matrix from particles is calculated as following:
