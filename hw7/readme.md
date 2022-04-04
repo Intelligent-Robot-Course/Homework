@@ -58,5 +58,5 @@ The comparisons between the odometry, GPS, filter and ground truth are shown in 
 Please derivate the predcition and update process of kalman filter.
 
 ### Task 2
-Please implement the "predict" and "estimate" function in the code [kalman-filter.py](codes/kalman-filter.py)
+Please implement the "predict" and "estimate" function in the code [kalman-filter.py](code/kalman-filter.py)
 
