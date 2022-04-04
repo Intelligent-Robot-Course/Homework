@@ -82,7 +82,17 @@ You will use the particle filter algorithm to locate the robot based on the dist
 
 You can refer to [Tutorial of particle filter ](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/12-Particle-Filters.ipynb) for better understanding and python implementation of particle filter.
 
-<div align=left> <img src=sources/animation.gif width=40%/> </div>
+<div align=left> <img src=sources/animation.gif width=60%/> </div>
+
+This is a sensor fusion localization with Particle Filter(PF).
+
+The blue line is true trajectory, the black line is dead reckoning trajectory,
+
+and the red line is estimated trajectory with PF.
+
+It is assumed that the robot can measure a distance from landmarks (RFID).
+
+This measurements are used for PF localization.
 
 ----
 ## Task 1
@@ -91,3 +101,8 @@ Please derivate the predcition and update process of kalman filter.
 ## Task 2
 Please implement the "predict" and "update" function in the code [kalman-filter.py](code/kalman-filter.py)
 
+## Task 3
+
+## Note for tasks
+The covariance matrix from particles is calculated as following:
+<div align=left> <img src=sources/animation.gif width=60%/> </div>
