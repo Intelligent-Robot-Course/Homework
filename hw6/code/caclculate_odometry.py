@@ -18,9 +18,6 @@ def calculate_odometry_velocity(currentPos, velL, velR, deltaT, noise = False, c
         (np.mat): updated position
     """
     L = 330.0
-    A = np.mat([[np.cos(currentPos.item(2)) / 2.0, np.cos(currentPos.item(2)) / 2.0],
-                [np.sin(currentPos.item(2)) / 2.0, np.sin(currentPos.item(2)) / 2.0],
-                [1 / L, -1 / L]])
 
     if noise == True:
         V_noise = np.mat([[velR], [velL]]) + np.random.normal([[0], [0]], scale = [[control_std[0]], [control_std[1]]])
@@ -28,6 +25,8 @@ def calculate_odometry_velocity(currentPos, velL, velR, deltaT, noise = False, c
         V_noise = np.mat([[velR], [velL]])
 
     V_noise = V_noise * deltaT
+    # To do: based on the velocity motion model, please code the matrix A (dimension: 3 x 2) in the following line, then the code in libe 30 can run correctly
+    
     deltaPos = A * V_noise
     currentPos = currentPos + deltaPos
     return currentPos
@@ -47,9 +46,6 @@ def calculate_odometry_encoders(currentPos, deltaL, deltaR, noise = False, contr
     L = 330.0
     ticksPerRev = 76600
     d = 195
-    A = np.mat([[np.cos(currentPos.item(2)) / 2.0, np.cos(currentPos.item(2)) / 2.0],
-                [np.sin(currentPos.item(2)) / 2.0, np.sin(currentPos.item(2)) / 2.0],
-                [1 / L, -1 / L]])
     V = np.mat([[(deltaR / ticksPerRev) * np.pi * d],
                 [(deltaL / ticksPerRev) * np.pi * d]])
     if noise == True:
@@ -57,6 +53,7 @@ def calculate_odometry_encoders(currentPos, deltaL, deltaR, noise = False, contr
     else:
         V_noise = V
 
+     # To do: based on the encoer-based motion model, please code the matrix A (dimension: 3 x 2) in the following line
     deltaPos = A * V_noise
     currentPos = currentPos + deltaPos
     return currentPos
