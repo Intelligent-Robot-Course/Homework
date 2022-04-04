@@ -34,16 +34,16 @@ class KalmanFilter:
     
     def predict(self, state):
         self.state = next_state(self.state, self.ip) + np.random.normal([1,1,0], [0.4, 0.4, 0.001], 3)
-        self.P = self.A*self.P*np.transpose(A) + self.SigmaState
-        self.output = H.dot(self.state)
+        self.P = 
+        self.output =
         return self.state
 
-    def estimate(self, measurement):
-        Kalman_gain = self.P*np.transpose(H) * np.linalg.pinv((H*self.P*np.transpose(H) + SigmaOutput))
-        gain_factor = Kalman_gain.dot((measurement - self.output))
-        self.state = self.state + gain_factor
-        self.P = (np.diag([1,1,1]) - Kalman_gain*self.H)*self.P
-        self.output = H.dot(self.state)
+    def update(self, measurement):
+        Kalman_gain = 
+        gain_factor = 
+        self.state = 
+        self.P = 
+        self.output = 
 
         return self.state, self.output 
 
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
         kal_filter.set_kalman_matrices(A,B,H,P,SigmaState,SigmaOutput)
         odo_out.append(kal_filter.predict(state))
-        state, output = kal_filter.estimate(gps_data)
+        state, output = kal_filter.update(gps_data)
         kal_out.append(output)
 
     plot_results(odo_out, gps, perfect_world, kal_out)
