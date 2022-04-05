@@ -1,4 +1,4 @@
-# Homework 7 - Kalman Filter
+# Homework 7 - 1D Kalman Filter
 
 -- Course: *Intelligent Robotics – Professor: Qi Hao*
 
