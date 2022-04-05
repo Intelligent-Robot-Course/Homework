@@ -1,4 +1,4 @@
-# Homework 7 - Kalman Filter
+# Homework 7 - Kalman Filter and Particle Filter
 
 -- Course: *Intelligent Robotics – Professor: Qi Hao*
 
