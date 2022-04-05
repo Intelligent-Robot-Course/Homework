@@ -1,4 +1,4 @@
-# Homework 7 - Kalman Filter and Particle Filter
+# Homework 7 - Kalman and Particle Filters for Localization
 
 -- Course: *Intelligent Robotics – Professor: Qi Hao*
 
