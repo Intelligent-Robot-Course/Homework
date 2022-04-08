@@ -1,4 +1,4 @@
-# Homework 9 - Occupancy Grid Mapping With Known Poses
+# Homework 8 - Occupancy Grid Mapping With Known Poses
 
 -- Course: *Intelligent Robotics – Professor: Qi Hao*
 
