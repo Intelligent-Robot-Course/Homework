@@ -74,3 +74,5 @@ It is clear that  <img src="https://latex.codecogs.com/svg.image?\inline&space;l
 
 ## Code instructions for tasks
 **Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
+
+**Note2** [task2.py](code/task2.py) give the implememtation framework of the task2.
