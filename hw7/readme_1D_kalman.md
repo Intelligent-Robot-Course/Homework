@@ -73,6 +73,19 @@ After implementing this filter, you should see that you can go from a very uncer
 <div align=left> <img src=sources/gaussian_updates.png width=50%/> </div>
 
 
+## Generic Particle Filter Algorithm
+- Randomly generate a bunch of particles: particles can have position, heading, and/or whatever other state variable you need to estimate. Each has a weight (probability) indicating how likely it matches the actual state of the system. Initialize each with the same weight.
+
+- Predict next state of the particles: Move the particles based on how you predict the real system is behaving.
+
+- Update: Update the weighting of the particles based on the measurement. Particles that closely match the measurements are weighted higher than particles which don't match the measurements very well.
+
+- Particle Resampling: Discard highly improbable particle and replace them with copies of the more probable particles.
+
+- Compute Estimate: Optionally, compute weighted mean and covariance of the set of particles to get a state estimate.
+
+You can refer to [Tutorial of particle filter ](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/12-Particle-Filters.ipynb) for better understanding and python implementation of particle filter.
+
 
 ----
 **Task 1**
