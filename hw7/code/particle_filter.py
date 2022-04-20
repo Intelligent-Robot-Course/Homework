@@ -103,13 +103,13 @@ def pf_localization(px, pw, xEst, PEst, z, u):
         ud = np.array([[ud1, ud2]]).T
         x = motion_model(x, ud)
 
-        #  Calc Inportance Weight
+        # Todo, Calc Importance Weight
         for i in range(len(z[:, 0])):
-            dx = x[0, 0] - z[i, 1]
-            dy = x[1, 0] - z[i, 2]
-            prez = math.sqrt(dx**2 + dy**2)
-            dz = prez - z[i, 0]
-            w = w * gauss_likelihood(dz, math.sqrt(Q[0, 0]))
+            dx = 
+            dy = 
+            prez = 
+            dz = 
+            w = 
 
         px[:, ip] = x[:, 0]
         pw[0, ip] = w
