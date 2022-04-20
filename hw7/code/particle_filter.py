@@ -142,8 +142,8 @@ def resampling(px, pw):
                 ind += 1
             inds.append(ind)
 
-        px = px[:, inds]
-        pw = np.zeros((1, NP)) + 1.0 / NP  # init weight
+        px = 
+        pw = 
 
     return px, pw
 
