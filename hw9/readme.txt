@@ -6,4 +6,4 @@ Coding Homeworks. Your final submission should be a compressed package with exte
 Overview
 This project shows how to use ekfSLAM for a reliable implementation of landmark Simultaneous Localization and Mapping (SLAM) using the Extended Kalman Filter (EKF) algorithm and maximum likelihood algorithm for data association. In this project, you create a landmark map of the immediate surroundings of a vehicle and simultaneously track the path of the vehicle. Generate a trajectory by moving the vehicle using the noisy control commands, and form the map using the landmarks it encounters along the path. Correct the vehicle trajectory and landmark estimates by observing the landmarks again.
 
-<div align=left> <img src=sources/animation.gif width=50%/> </div>
+<div align=left> <img src=source/animation.gif width=50%/> </div>
