@@ -17,3 +17,5 @@ This is a simulation of EKF SLAM.
 -Red line: EKF SLAM position estimation
 
 <div align=left> <img src=source/animation.gif width=50%/> </div>
+
+EKF SLAM models the SLAM problem in a single EKF where the modeled state is both the pose (x, y, \theta) and an array of landmarks [(x_1, y_1), (x_2, x_y), ... , (x_n, y_n)] for n landmarks. The covariance between each of the positions and landmarks are also tracked.
