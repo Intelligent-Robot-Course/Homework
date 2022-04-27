@@ -22,7 +22,11 @@ Assume a very simple sensor model: every grid cell with a distance (based on its
 
 Please calculate the resulting occupancy grid map using the inverse sensor model using Python.
 
-Assign the cell coordinates, which span from 0 to 200 (both endpoints included) with increments of 10, to one array c and the belief values to another array m. Use matplotlib.pyplot.plot(c,m) to visualize the belief. The measurements and the prior belief are given in the follow table:
+Assign the cell coordinates, which span from 0 to 200 (both endpoints included) with increments of 10, to one array c and the belief values to another array m. Use matplotlib.pyplot.plot(c,m) to visualize the belief. 
+
+<div align=center> <img src=images/belief_task1.png width=50%/> </div>
+
+The measurements and the prior belief are given in the follow table:
 
 | Grid resolution              | 10cm                                       |
 |------------------------------|--------------------------------------------|
