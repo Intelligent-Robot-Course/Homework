@@ -19,3 +19,4 @@ for z in measurements:
         
 p_m = 1-1/(1+np.exp(l_m))
 plt.plot(m,p_m)
+plt.show()
