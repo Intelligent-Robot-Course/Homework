@@ -8,13 +8,13 @@ m = 10*np.arange(21)
 for z in measurements:
     i = z//10 
     if i+3<=len(l_m):
-        l_m[0:i+1] = l_m[0:i+1] + np.log(0.3/0.7) 
-        l_m[i+1:i+3] = l_m[i+1:i+3] + np.log(0.6/0.4)
+        l_m[0:i+1] = # todo 
+        l_m[i+1:i+3] = # todo
     elif i+1<=len(l_m):
-        l_m[0:i+1] = l_m[0:i+1] + np.log(0.3/0.7) 
-        l_m[i+1:] = l_m[i+1:] + np.log(0.6/0.4)
+        l_m[0:i+1] = #todo
+        l_m[i+1:] = #todo
     else:
-        l_m = l_m + np.log(0.3/0.7) 
+        l_m = # todo
 
-p_m = 1-1/(1+np.exp(l_m))
+p_m = # todo
 plt.plot(m,p_m)
