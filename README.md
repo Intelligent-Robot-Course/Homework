@@ -12,3 +12,8 @@ The homework for the intelligent robotics course.
 - [Homework VI- Robot Perception](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw6)
 - [Homework VII- Kalman and Particle Filters](https://github.com/Intelligent-Robot-Course/Homework/blob/main/hw7/readme_1D_kalman_and_particle_filter.md)
 - [Homework VIII- Robot Localization](https://github.com/Intelligent-Robot-Course/Homework/blob/main/hw7/readme.md)
+- [Homework IX- Occupancy Grid Mapping With Known Poses](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw8)
+
+
+
+
