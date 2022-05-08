@@ -114,6 +114,13 @@ As it is shown, the particle filter differs from EKF by representing the robotâ€
 
 I.e. Each particle maintains a deterministic pose and n-EKFs for each landmark and update it with each measurement.
 
+The particles are initially drawn from a uniform distribution the represent the initial uncertainty. At each time step we do:
+
+- Predict the pose for each particle by using control input u and the motion model (the landmarks are not updated).
+
+- Update the particles with observations z, where the weights are adjusted based on how likely the particle to have the correct pose given the sensor measurement
+
+- Resampling such that the particles with the largest weights survive and the unlikely ones with the lowest weights die out.
 
 ## Code instructions for tasks
 **Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
