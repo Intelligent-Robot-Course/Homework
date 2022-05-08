@@ -54,9 +54,9 @@ def ekf_slam(xEst, PEst, u, z):
         lm = get_LM_Pos_from_state(xEst, minid)
         y, S, H = calc_innovation(lm, xEst, PEst, z[iz, 0:2], minid)
 
-        K = PEst * H.T * np.linalg.inv(S)
-        xEst = xEst + K * y
-        PEst = (np.eye(len(xEst)) - K * H) * PEst
+        K = ## to do
+        xEst = ## to do 
+        PEst = ## to do
 
     xEst[2] = pi_2_pi(xEst[2])
 
