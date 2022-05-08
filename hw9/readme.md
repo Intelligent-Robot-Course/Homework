@@ -150,13 +150,12 @@ The following figure shows 100 particles distributed uniformly between [-0.5, 0.
 
 ----
 ## Task 1
-Please implement the predcition and update process of EKF-SLAM.
+The prediction, update and Jacobian functions are given, please implement the "**fast_slam1**" processing of EKF-SLAM and print the final experimental result using the provided visualization function.
 
 ## Task 2
-Please implement the "predict" and "update" process of particle filter based SLAM
-
+The basic functions such as prediction, update, Jacobian, weight calculation and resampling functions given, please implement the "**fast_slam1**" function of particle slam and print the final experimental result using the provided visualization function.
 
 ## Code instructions for tasks
-**Note1** [ekf_slam.py](source/ekf_slam.py) give the implememtation framework of the task1.
+**Note1** [ekf_slam.py](source/ekf_slam.py) give the implememtation framework of the task1, please complete the ekf_slam function.
 
 **Note2** [pf_slam.py](source/pf_slam.py) give the implememtation framework of the task2.
