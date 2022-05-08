@@ -148,7 +148,14 @@ The following figure shows 100 particles distributed uniformly between [-0.5, 0.
 
 <div align=left> <img src=source/sampling.png width=50%/> </div>
 
-## Task
+----
+## Task 1
+Please implement the predcition and update process of EKF-SLAM.
+
+## Task 2
+Please implement the "predict" and "update" process of particle filter based SLAM
+
+
 ## Code instructions for tasks
 **Note1** [ekf_slam.py](source/ekf_slam.py) give the implememtation framework of the task1.
 
