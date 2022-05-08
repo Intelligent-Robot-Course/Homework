@@ -70,7 +70,19 @@ With an observation associated to the appropriate landmark, the innovation can b
 
 <img src="https://latex.codecogs.com/svg.image?\inline&space;y&space;=&space;z_t&space;-&space;h(\textbf{X})" title="https://latex.codecogs.com/svg.image?\inline y = z_t - h(\textbf{X})" />
 
-With the innovation calculated, the question becomes which to trust more - the observations or the predictions? To determine this, we calculate the Kalman Gain - a percent of how much of the innovation to add to the prediction based on the uncertainty in the predict step and the update step.
+With the innovation calculated, the question becomes which to trust more - the observations or the predictions? To determine this, we calculate the Kalman Gain K - a percent of how much of the innovation to add to the prediction based on the uncertainty in the predict step and the update step:
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;K&space;=&space;\overline{P}_t&space;H_t^T(H_t&space;\overline{P}_t&space;H_t^T&space;&plus;&space;Q_t)^{-1}" title="https://latex.codecogs.com/svg.image?\inline K = \overline{P}_t H_t^T(H_t \overline{P}_t H_t^T + Q_t)^{-1}" />
+
+where H is the jacobian of the measurement function. 
+
+The update is captured in the following:
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}_{Update}&space;=&space;X_{predict}&space;&plus;&space;K*y" title="https://latex.codecogs.com/svg.image?\inline \textbf{X}_{Update} = X_{predict} + K*y" />
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;P_t&space;=&space;(I-K_tH_t)\overline{P}_t" title="https://latex.codecogs.com/svg.image?\inline P_t = (I-K_tH_t)\overline{P}_t" />
+
+
 
 
 
