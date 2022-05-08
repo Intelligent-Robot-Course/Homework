@@ -22,7 +22,7 @@ This is a simulation of EKF SLAM.
 
 <div align=left> <img src=source/animation.gif width=50%/> </div>
 
-EKF SLAM models the SLAM problem in a single EKF where the modeled state is both the pose <img src="https://latex.codecogs.com/svg.image?\inline&space;(x,y,\theta&space;)" title="https://latex.codecogs.com/svg.image?\inline l(m_i|z_t,x_t)" />. and an array of landmarks https://latex.codecogs.com/svg.image?\inline&space;[(x_1,y_1),&space;(x_2,y_2),...,(x_n,y_n)] for n landmarks. The covariance between each of the positions and landmarks are also tracked.
+EKF SLAM models the SLAM problem in a single EKF where the modeled state is both the pose <img src="https://latex.codecogs.com/svg.image?\inline&space;(x,y,\theta&space;)" title="https://latex.codecogs.com/svg.image?\inline l(m_i|z_t,x_t)" /> and an array of landmarks <img src = "https://latex.codecogs.com/svg.image?\inline&space;[(x_1,y_1),&space;(x_2,y_2),...,(x_n,y_n)]"/> for n landmarks. The covariance between each of the positions and landmarks are also tracked.
 
 <img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}&space;=&space;[x,y,\theta,x_1,y_1,x_2,y_2,...,x_n,y_n]^T" title="https://latex.codecogs.com/svg.image?\inline \textbf{X} = [x,y,\theta,x_1,y_1,x_2,y_2,...,x_n,y_n]^T" />
 
