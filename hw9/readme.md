@@ -37,3 +37,8 @@ A single estimate of the pose is tracked over time, while the confidence in the 
  
  Here the state simplifies to a combination of pose ( <img src="https://latex.codecogs.com/svg.image?\inline&space;x" title="https://latex.codecogs.com/svg.image?\inline x" />) and map (<img src="https://latex.codecogs.com/svg.image?\inline&space;m" title="https://latex.codecogs.com/svg.image?\inline m" />). The covariance matrix becomes easier to understand and simply reads as the uncertainty of the robots pose (<img src="https://latex.codecogs.com/svg.image?\inline&space;\sum_{xx}" title="https://latex.codecogs.com/svg.image?\inline \sum_{xx}" />), the uncertainty of the map (<img src="https://latex.codecogs.com/svg.image?\inline&space;\sum_{mm}" title="https://latex.codecogs.com/svg.image?\inline \sum_{mm}" />), and the uncertainty of the robots pose with respect to the map and vice versa (<img src="https://latex.codecogs.com/svg.image?\inline&space;\sum_{xm},&space;\sum_{mx}" title="https://latex.codecogs.com/svg.image?\inline \sum_{xm}, \sum_{mx}" />).
 
+## EKF SLAM algorithm walk through
+At each time step, the following is done:
+- predict the new state using the control functions 
+
+- - update the belief in landmark positions based on the estimated state and measurements
