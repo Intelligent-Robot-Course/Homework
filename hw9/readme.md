@@ -61,7 +61,7 @@ As a result, the simulation is set up as the following. R represents the process
 
 <img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}_{true}&space;=&space;FX&plus;B(U)\\\textbf{X}_{DR}&space;=&space;FX&plus;B(U&plus;R),R&space;=&space;\begin{bmatrix}\sigma_v&space;\\&space;\sigma_w\end{bmatrix}" title="https://latex.codecogs.com/svg.image?\inline \textbf{X}_{true} = FX+B(U)\\\textbf{X}_{DR} = FX+B(U+R),R = \begin{bmatrix}\sigma_v \\ \sigma_w\end{bmatrix}" />
 
-The implementation of the motion model prediciton code is shown in "motion_model" function of the provided code. The "observation" function shows how the simulation uses (or doesn’t use) the process noise Rsim to the find the ground truth and dead reckoning estimates of the pose.
+The implementation of the motion model prediciton code is shown in "motion_model" function of the provided code [ekf_slam.py](source/ekf_slam.py). The "observation" function in  [ekf_slam.py](source/ekf_slam.py) shows how the simulation uses (or doesn’t use) the process noise Rsim to the find the ground truth and dead reckoning estimates of the pose.
 
 ### Update
 In the update phase, the observations of nearby landmarks are used to correct the location estimate. For every landmark observed, it is associated to a particular landmark in the known map. If no landmark exists in the position surrounding the landmark, it is taken as a NEW landmark. The distance threshold for how far a landmark must be from the next known landmark before its considered to be a new landmark is set by M_DIST_TH.
