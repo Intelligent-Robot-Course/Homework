@@ -56,3 +56,6 @@ Notice that while <img src="https://latex.codecogs.com/svg.image?\inline&space;U
  and <img src="https://latex.codecogs.com/svg.image?\inline&space;w_t" title="https://latex.codecogs.com/svg.image?\inline w_t" />, in the actual calculations, a <img src="https://latex.codecogs.com/svg.image?\inline&space;&plus;\sigma_v" title="https://latex.codecogs.com/svg.image?\inline +\sigma_v" />
  and <img src="https://latex.codecogs.com/svg.image?\inline&space;&plus;\sigma_w" title="https://latex.codecogs.com/svg.image?\inline +\sigma_w" />
  appear. These values represent the error between the given control inputs and the actual control inputs.
+
+As a result, the simulation is set up as the following. R represents the process noise which is added to the control inputs to simulate noise experienced in the real world. A set of truth values are computed from the raw control values while the values dead reckoning values incorporate the error into the estimation.
+
