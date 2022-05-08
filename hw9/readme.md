@@ -11,9 +11,13 @@ This project shows how to use ekfSLAM for a reliable implementation of landmark 
 This is a simulation of EKF SLAM.
 
 -Black stars: landmarks
+
 -Green crosses: estimates of landmark positions
+
 -Black line: dead reckoning
+
 -Blue line: ground truth
+
 -Red line: EKF SLAM position estimation
 
 <div align=left> <img src=source/animation.gif width=50%/> </div>
