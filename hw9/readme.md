@@ -159,3 +159,6 @@ The basic functions such as prediction, update, Jacobian, weight calculation and
 **Note1** [ekf_slam.py](source/ekf_slam.py) give the implememtation framework of the task1, please complete the ekf_slam function.
 
 **Note2** [pf_slam.py](source/pf_slam.py) give the implememtation framework of the task2.
+
+
+- [Homework X- EKF-Based Landmark SLAM & Fast SLAM based on Particle Filters](https://github.com/Intelligent-Robot-Course/Homework/tree/main/hw9)
