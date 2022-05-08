@@ -83,6 +83,12 @@ The update is captured in the following:
 <img src="https://latex.codecogs.com/svg.image?\inline&space;P_t&space;=&space;(I-K_tH_t)\overline{P}_t" title="https://latex.codecogs.com/svg.image?\inline P_t = (I-K_tH_t)\overline{P}_t" />
 
 
+### Observation Step
+The observation step described here is outside the main EKF SLAM process and is primarily used as a method of driving the simulation. The observations function is in charge of calculating how the poses of the robots change and accumulate error over time, and the theoretical measurements that are expected as a result of each measurement.
 
+Observations are based on the TRUE position of the robot. Error in dead reckoning and control functions are passed along here as well.
+Please refer to the function "observation" in the code file 
+
+Observation Step
 
 
