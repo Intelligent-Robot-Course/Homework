@@ -87,8 +87,16 @@ The update is captured in the following:
 The observation step described here is outside the main EKF SLAM process and is primarily used as a method of driving the simulation. The observations function is in charge of calculating how the poses of the robots change and accumulate error over time, and the theoretical measurements that are expected as a result of each measurement.
 
 Observations are based on the TRUE position of the robot. Error in dead reckoning and control functions are passed along here as well.
-Please refer to the function "observation" in the code file 
+Please refer to the function "observation" in the code file [ekf_slam.py](code/ekf_slam.py)
 
 Observation Step
 
 
+
+
+
+
+## Code instructions for tasks
+**Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
+
+**Note2** [task2.py](code/task2.py) give the implememtation framework of the task2.
