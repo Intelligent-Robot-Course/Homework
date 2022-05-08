@@ -122,12 +122,21 @@ The particles are initially drawn from a uniform distribution the represent the 
 
 - Resampling such that the particles with the largest weights survive and the unlikely ones with the lowest weights die out.
 
-## Predict
+### Predict
 The predict step is the same as that of landmarks based EKF-SLAM.
 From the equations, we can see how the particles distribution evolves.
 To get the insight of the motion model change the value of  and re-run the cells again. As R is the parameters that indicates how much we trust that the robot executed the motion commands.
 It is interesting to notice also that only motion will increase the uncertainty in the system as the particles start to spread out more. If observations are included the uncertainty will decrease and particles will converge to the correct estimate.
-Please refer to the code implementations in [ekf_slam.py](source/pf_slam.py)
+Please refer to the functions "motion_model" and "predict_particles" implementations in [pf_slam.py](source/pf_slam.py).
+
+### Update
+For the update step it is useful to observe a single particle and the effect of getting a new measurements on the weight of the particle.
+The weight of the particle is updated according to the following equation:
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;w_i&space;=&space;|2\pi&space;Q|^{-\frac{1}{2}}exp(\frac{-1}{2}(z_t-\hat{z}_i)^TQ^{-1}(z_t-\hat{z}_i))" title="https://latex.codecogs.com/svg.image?\inline w_i = |2\pi Q|^{-\frac{1}{2}}exp(\frac{-1}{2}(z_t-\hat{z}_i)^TQ^{-1}(z_t-\hat{z}_i))" />
+
+Where, <img src="https://latex.codecogs.com/svg.image?\inline&space;w_i" title="https://latex.codecogs.com/svg.image?\inline w_i" /> is the computed weight, <img src="https://latex.codecogs.com/svg.image?\inline&space;Q" title="https://latex.codecogs.com/svg.image?\inline Q" /> is the measurement covariance, <img src="https://latex.codecogs.com/svg.image?\inline&space;z_t" title="https://latex.codecogs.com/svg.image?\inline z_t" /> is the actual measurment and <img src="https://latex.codecogs.com/svg.image?\inline&space;\hat{z}_i" title="https://latex.codecogs.com/svg.image?\inline \hat{z}_i" />
+ is the predicted measurement of particle i.
 
 ## Code instructions for tasks
 **Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
