@@ -57,5 +57,9 @@ Notice that while <img src="https://latex.codecogs.com/svg.image?\inline&space;U
  and <img src="https://latex.codecogs.com/svg.image?\inline&space;&plus;\sigma_w" title="https://latex.codecogs.com/svg.image?\inline +\sigma_w" />
  appear. These values represent the error between the given control inputs and the actual control inputs.
 
-As a result, the simulation is set up as the following. R represents the process noise which is added to the control inputs to simulate noise experienced in the real world. A set of truth values are computed from the raw control values while the values dead reckoning values incorporate the error into the estimation.
+As a result, the simulation is set up as the following. R represents the process noise which is added to the control inputs to simulate noise experienced in the real world. A set of truth values are computed from the raw control values while the values dead reckoning values incorporate the error into the estimation:
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}_{true}&space;=&space;FX&plus;B(U)\\\textbf{X}_{DR}&space;=&space;FX&plus;B(U&plus;R),R&space;=&space;\begin{bmatrix}\sigma_v&space;\\&space;\sigma_w\end{bmatrix}" title="https://latex.codecogs.com/svg.image?\inline \textbf{X}_{true} = FX+B(U)\\\textbf{X}_{DR} = FX+B(U+R),R = \begin{bmatrix}\sigma_v \\ \sigma_w\end{bmatrix}" />
+
+The implementation of the motion model prediciton code is shown in "motion_model" function of the provided code. The "observation" function shows how the simulation uses (or doesn’t use) the process noise Rsim to the find the ground truth and dead reckoning estimates of the pose.
 
