@@ -41,4 +41,13 @@ A single estimate of the pose is tracked over time, while the confidence in the 
 At each time step, the following is done:
 - predict the new state using the control functions 
 
-- - update the belief in landmark positions based on the estimated state and measurements
+- update the belief in landmark positions based on the estimated state and measurements
+
+### Predict
+Predict State update: The following equations describe the predicted motion model of the robot in case we provide only the control <img src="https://latex.codecogs.com/svg.image?\inline&space;(v,w)" title="https://latex.codecogs.com/svg.image?\inline (v,w)" />, which are the linear and angular velocity respectively.
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;F&space;=&space;\begin{bmatrix}1&space;&&space;0&space;&&space;0&space;\\0&space;&&space;1&space;&&space;0&space;\\0&space;&&space;0&space;&&space;1&space;\\\end{bmatrix},&space;B&space;=&space;\begin{bmatrix}\Delta&space;t&space;cos(\theta)&space;&&space;0&space;\\\Delta&space;t&space;sin(\theta)&space;&&space;0&space;\\0&space;&&space;\Delta&space;t&space;\\\end{bmatrix},&space;U&space;=&space;\begin{bmatrix}v_t&space;\\w_t\end{bmatrix}" title="https://latex.codecogs.com/svg.image?\inline F = \begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 1 \\\end{bmatrix}, B = \begin{bmatrix}\Delta t cos(\theta) & 0 \\\Delta t sin(\theta) & 0 \\0 & \Delta t \\\end{bmatrix}, U = \begin{bmatrix}v_t \\w_t\end{bmatrix}" />
+
+Thus, the motion model is: 
+<img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}_{t&plus;1}&space;=&space;F\textbf{X}_{t}&plus;B\begin{bmatrix}v_t&space;&plus;&space;\sigma_v&space;\\w_t&space;&plus;&space;\sigma_w\end{bmatrix}" title="https://latex.codecogs.com/svg.image?\inline \textbf{X}_{t+1} = F\textbf{X}_{t}+B\begin{bmatrix}v_t + \sigma_v \\w_t + \sigma_w\end{bmatrix}" />
+
