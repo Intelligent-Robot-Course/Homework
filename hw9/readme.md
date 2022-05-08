@@ -146,7 +146,7 @@ In the reseampling steps a new set of particles are chosen from the old set. Thi
 
 The following figure shows 100 particles distributed uniformly between [-0.5, 0.5] with the weights of each particle distributed according to a Gaussian funciton.
 
-<div align=middle> <img src=source/sampling.png width=50%/> </div>
+<div align=left> <img src=source/sampling.png width=50%/> </div>
 
 ## Code instructions for tasks
 **Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
