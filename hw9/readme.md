@@ -48,6 +48,11 @@ Predict State update: The following equations describe the predicted motion mode
 
 <img src="https://latex.codecogs.com/svg.image?\inline&space;F&space;=&space;\begin{bmatrix}1&space;&&space;0&space;&&space;0&space;\\0&space;&&space;1&space;&&space;0&space;\\0&space;&&space;0&space;&&space;1&space;\\\end{bmatrix},&space;B&space;=&space;\begin{bmatrix}\Delta&space;t&space;cos(\theta)&space;&&space;0&space;\\\Delta&space;t&space;sin(\theta)&space;&&space;0&space;\\0&space;&&space;\Delta&space;t&space;\\\end{bmatrix},&space;U&space;=&space;\begin{bmatrix}v_t&space;\\w_t\end{bmatrix}" title="https://latex.codecogs.com/svg.image?\inline F = \begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 1 \\\end{bmatrix}, B = \begin{bmatrix}\Delta t cos(\theta) & 0 \\\Delta t sin(\theta) & 0 \\0 & \Delta t \\\end{bmatrix}, U = \begin{bmatrix}v_t \\w_t\end{bmatrix}" />
 
-Thus, the motion model is: 
+Thus, the motion model is:
+
 <img src="https://latex.codecogs.com/svg.image?\inline&space;\textbf{X}_{t&plus;1}&space;=&space;F\textbf{X}_{t}&plus;B\begin{bmatrix}v_t&space;&plus;&space;\sigma_v&space;\\w_t&space;&plus;&space;\sigma_w\end{bmatrix}" title="https://latex.codecogs.com/svg.image?\inline \textbf{X}_{t+1} = F\textbf{X}_{t}+B\begin{bmatrix}v_t + \sigma_v \\w_t + \sigma_w\end{bmatrix}" />
 
+Notice that while <img src="https://latex.codecogs.com/svg.image?\inline&space;U" title="https://latex.codecogs.com/svg.image?\inline U" />  is only defined by <img src="https://latex.codecogs.com/svg.image?\inline&space;v_t" title="https://latex.codecogs.com/svg.image?\inline v_t" />
+ and <img src="https://latex.codecogs.com/svg.image?\inline&space;w_t" title="https://latex.codecogs.com/svg.image?\inline w_t" />, in the actual calculations, a <img src="https://latex.codecogs.com/svg.image?\inline&space;&plus;\sigma_v" title="https://latex.codecogs.com/svg.image?\inline +\sigma_v" />
+ and <img src="https://latex.codecogs.com/svg.image?\inline&space;&plus;\sigma_w" title="https://latex.codecogs.com/svg.image?\inline +\sigma_w" />
+ appear. These values represent the error between the given control inputs and the actual control inputs.
