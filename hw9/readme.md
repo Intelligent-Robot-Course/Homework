@@ -139,7 +139,14 @@ Where, <img src="https://latex.codecogs.com/svg.image?\inline&space;w_i" title="
  is the predicted measurement of particle i.
  
 To experiment this, a single particle is initialized then passed an initial measurement, which results in a relatively average weight. However, setting the particle coordinate to a wrong value to simulate wrong estimation will result in a very low weight. The lower the weight the less likely that this particle will be drawn during resampling and probably will die out.
- 
+
+
+### Resampling
+In the reseampling steps a new set of particles are chosen from the old set. This is done according to the weight of each particle.
+
+The following figure shows 100 particles distributed uniformly between [-0.5, 0.5] with the weights of each particle distributed according to a Gaussian funciton.
+
+
 
 ## Code instructions for tasks
 **Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
