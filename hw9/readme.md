@@ -63,3 +63,14 @@ As a result, the simulation is set up as the following. R represents the process
 
 The implementation of the motion model prediciton code is shown in "motion_model" function of the provided code. The "observation" function shows how the simulation uses (or doesn’t use) the process noise Rsim to the find the ground truth and dead reckoning estimates of the pose.
 
+### Update
+In the update phase, the observations of nearby landmarks are used to correct the location estimate. For every landmark observed, it is associated to a particular landmark in the known map. If no landmark exists in the position surrounding the landmark, it is taken as a NEW landmark. The distance threshold for how far a landmark must be from the next known landmark before its considered to be a new landmark is set by M_DIST_TH.
+
+With an observation associated to the appropriate landmark, the innovation can be calculated. Innovation (<img src="https://latex.codecogs.com/svg.image?\inline&space;y" title="https://latex.codecogs.com/svg.image?\inline y" />) is the difference between the observation and the observation that should have been made if the observation were made from the pose predicted in the predict stage:
+
+<img src="https://latex.codecogs.com/svg.image?\inline&space;y&space;=&space;z_t&space;-&space;h(\textbf{X})" title="https://latex.codecogs.com/svg.image?\inline y = z_t - h(\textbf{X})" />
+
+With the innovation calculated, the question becomes which to trust more - the observations or the predictions? To determine this, we calculate the Kalman Gain - a percent of how much of the innovation to add to the prediction based on the uncertainty in the predict step and the update step.
+
+
+
