@@ -149,6 +149,6 @@ The following figure shows 100 particles distributed uniformly between [-0.5, 0.
 <div align=left> <img src=source/sampling.png width=50%/> </div>
 
 ## Code instructions for tasks
-**Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
+**Note1** [ekf_slam.py](source/ekf_slam.py) give the implememtation framework of the task1.
 
-**Note2** [task2.py](code/task2.py) give the implememtation framework of the task2.
+**Note2** [pf_slam.py](source/pf_slam.py) give the implememtation framework of the task2.
