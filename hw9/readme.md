@@ -1,4 +1,4 @@
-Homework 9 - EKF-Based Landmark SLAM
+Homework 9 - EKF-Based Landmark SLAM & Particle Filter-based SLAM
 
 -- Course: Intelligent Robotics – Professor: Qi Hao
 
