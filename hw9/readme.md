@@ -93,6 +93,9 @@ Please refer to the function "observation" in the code file [ekf_slam.py](source
 # Fast SLAM
 
 ## simulation 
+
+<div align=left> <img src=source/animation.gif width=50%/> </div>
+
 This demo shows the example of landmark feature based FastSLAM using particle filters.
 
 - The blue line is the true trajectory
@@ -109,8 +112,8 @@ This demo shows the example of landmark feature based FastSLAM using particle fi
 
 As it is shown, the particle filter differs from EKF by representing the robot’s estimation through a set of particles. Each single particle has an independent belief, as it holds the pose <img src="https://latex.codecogs.com/svg.image?\inline&space;(x,y,\theta&space;)" title="https://latex.codecogs.com/svg.image?\inline l(m_i|z_t,x_t)" /> and an array of landmarks <img src = "https://latex.codecogs.com/svg.image?\inline&space;[(x_1,y_1),&space;(x_2,y_2),...,(x_n,y_n)]"/> for n landmarks.
 
+I.e. Each particle maintains a deterministic pose and n-EKFs for each landmark and update it with each measurement.
 
-<div align=left> <img src=source/animation.gif width=50%/> </div>
 
 ## Code instructions for tasks
 **Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
