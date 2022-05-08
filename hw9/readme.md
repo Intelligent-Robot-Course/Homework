@@ -1,11 +1,12 @@
-Homework 9 - EKF-Based Landmark SLAM & Particle Filter-based SLAM
+Homework 9 - EKF-Based Landmark SLAM & Fast SLAM based on Particle Filters
 
 -- Course: Intelligent Robotics – Professor: Qi Hao
 
 **Coding Homeworks.** Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX). Your code should be run step-by-step without any error. Real-time animation is also recommended.
-
+# EKF-Based Landmark SLAM
 ## Overview
-This project shows how to use ekfSLAM for a reliable implementation of landmark Simultaneous Localization and Mapping (SLAM) using the Extended Kalman Filter (EKF) algorithm and maximum likelihood algorithm for data association. In this project, you create a landmark map of the immediate surroundings of a vehicle and simultaneously track the path of the vehicle. Generate a trajectory by moving the vehicle using the noisy control commands, and form the map using the landmarks it encounters along the path. Correct the vehicle trajectory and landmark estimates by observing the landmarks again.
+The first project shows how to use ekfSLAM for a reliable implementation of landmark Simultaneous Localization and Mapping (SLAM) using the Extended Kalman Filter (EKF) algorithm and maximum likelihood algorithm for data association. In this project, you create a landmark map of the immediate surroundings of a vehicle and simultaneously track the path of the vehicle. Generate a trajectory by moving the vehicle using the noisy control commands, and form the map using the landmarks it encounters along the path. Correct the vehicle trajectory and landmark estimates by observing the landmarks again.
+The second project shows the implementation of FastSLAM algorithm which is based on particle filters and belongs to the family of probabilistic SLAM approaches. It is used with feature-based maps (see gif above) or with occupancy grid maps.
 
 ## Simulation
 This is a simulation of EKF SLAM.
@@ -89,12 +90,27 @@ The observation step described here is outside the main EKF SLAM process and is 
 Observations are based on the TRUE position of the robot. Error in dead reckoning and control functions are passed along here as well.
 Please refer to the function "observation" in the code file [ekf_slam.py](source/ekf_slam.py)
 
-Observation Step
+# Fast SLAM
+
+## simulation 
+This demo shows the example of landmark feature based FastSLAM using particle filters.
+
+- The blue line is the true trajectory
+
+- The red line is the estimated trajectory
+
+- The red dots represent the distribution of particles
+
+- The black line represent dead reckoning tracjectory
+
+- The blue x is the observed and estimated landmarks
+
+- The black x is the true landmark
+
+As it is shown, the particle filter differs from EKF by representing the robot’s estimation through a set of particles. Each single particle has an independent belief, as it holds the pose <img src="https://latex.codecogs.com/svg.image?\inline&space;(x,y,\theta&space;)" title="https://latex.codecogs.com/svg.image?\inline l(m_i|z_t,x_t)" /> and an array of landmarks <img src = "https://latex.codecogs.com/svg.image?\inline&space;[(x_1,y_1),&space;(x_2,y_2),...,(x_n,y_n)]"/> for n landmarks.
 
 
-
-
-
+<div align=left> <img src=source/animation.gif width=50%/> </div>
 
 ## Code instructions for tasks
 **Note1** [task1.py](code/task1.py) give the implememtation framework of the task1.
