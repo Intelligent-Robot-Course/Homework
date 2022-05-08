@@ -45,11 +45,11 @@ class Particle:
 
 def fast_slam1(particles, u, z):
 
-    particles = predict_particles(particles, u)
+    particles = ## todo 
 
-    particles = update_with_observation(particles, z)
+    particles = ## todo 
 
-    particles = resampling(particles)
+    particles = ## todo
 
     return particles
 
