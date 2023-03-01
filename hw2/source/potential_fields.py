@@ -11,7 +11,7 @@ class potential_fields:
         return
 
     def perpendicular(self, line_obstacle, car_position, coefficient=1):
-        # line_obstacle: [px1, py1, px2, py2]
+        # line_obstacle: [point1, point2]; point: 2*1 matrix
         # Please complete this function for question2
         pass
 

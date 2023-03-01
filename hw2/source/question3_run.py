@@ -1,35 +1,37 @@
-from ir_sim.env import env_base
+from ir_sim.env import EnvBase
+from ir_sim.util.collision_dectection_geo import collision_seg_seg 
 from potential_fields import potential_fields
-from pathlib import Path
+from collections import namedtuple
+import argparse
 
-animation = False # whether generate the animation
-image_path = Path(__file__).parent / 'image'  # image and animation path
-gif_path = Path(__file__).parent / 'gif'
+parser = argparse.ArgumentParser(description='The given force potential fields')
+parser.add_argument('-a', '--animation', action='store_true')
+args = parser.parse_args()
 
-env = env_base(world_name = 'question3.yaml')
-pf = potential_fields()
+point = namedtuple('point', 'x y')
+
+env = EnvBase(world_name='question3.yaml', save_ani=args.animation)
 env.show()
-for i in range(1000):
 
-    if animation:
-        env.save_fig(image_path, i) 
+pf = potential_fields()
+
+line_obs = env.get_obstacle_list() 
+
+for i in range(1000):
 
 
     ## please complete this part to solve question3 based on the force defined in question2 
-    line_list = env.obs_line_states
 
-    #    ...
+
     
-    ##  
 
-    env.robot_step(pf_force)
+
+    ## please complete this part to solve question3 based on the force defined in question2 
+
+    env.step(pf_force)
     env.render(show_traj=True)
 
-    if env.collision_check() or env.arrive_check():  # check whether there are 
+    if env.done():
         break
 
-if animation:
-    env.save_ani(image_path, gif_path, ani_name='potential_field', keep_len=10)
-
-print('done')
-env.show()
+env.end(ani_name = 'potential_field', ani_kwargs={'subrectangles': True})

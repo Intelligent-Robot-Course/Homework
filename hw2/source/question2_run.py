@@ -1,58 +1,41 @@
-from ir_sim.env import env_base
-from matplotlib import animation
-from potential_fields import potential_fields
-import numpy as np
-from pathlib import Path
+from ir_sim.env import EnvBase
+from potential_fields import potential_fields                 
+import argparse
 
-# parameters
-potential = 'uniform' # uniform, perpendicular, attractive, repulsive, tangential
+# force: uniform, perpendicular, attractive, repulsive, tangential
 
-animation = False # whether generate the animation
-image_path = Path(__file__).parent / 'image'  # image and animation path
-gif_path = Path(__file__).parent / 'gif'
+parser = argparse.ArgumentParser(description='The given force potential fields')
 
-if potential == 'perpendicular':
-    obs_line_states= [[-1, 2, 11, 4]]
+parser.add_argument('-f', default='uniform', dest='force')
+parser.add_argument('-a', '--animation', action='store_true')
+
+args = parser.parse_args()
+
+if args.force == 'perpendicular':
+    env = EnvBase(world_name = 'question2.yaml', save_ani=args.animation)
 else:
-    obs_line_states=[]
+    env = EnvBase(world_name = 'question2_no_obs.yaml', save_ani=args.animation)
 
-env = env_base(world_name = 'question2.yaml', obs_line_states=obs_line_states)
 pf = potential_fields()
 
-for i in range(30):
+for i in range(40):
 
-    if animation:
-        env.save_fig(image_path, i) 
-
-    if potential == 'uniform':
+    if args.force == 'uniform':
         pf_vel = pf.uniform()
-        env.robot_step(pf_vel)
-        env.render(show_goal=False)
-
-    elif potential == 'perpendicular':
-        pf_vel = pf.perpendicular(obs_line_states[0], env.robot.state)
-        env.robot_step(pf_vel)
-        env.render(show_goal=False)
-
-    elif potential == 'attractive':
-        
-        pf_vel = pf.attractive(env.robot.goal[0:2], env.robot.state)
-        env.robot_step(pf_vel)
-        env.render(show_goal=True)
-
-    elif potential == 'repulsive':
-        
-        pf_vel = pf.repulsive(env.robot.goal[0:2], env.robot.state)
-        env.robot_step(pf_vel)
-        env.render(show_goal=True)
-
-    elif potential == 'tangential':
-        
-        pf_vel = pf.tangential(env.robot.goal[0:2], env.robot.state)
-        env.robot_step(pf_vel)
-        env.render(show_goal=True)
-
-if animation:
-    env.save_ani(image_path, gif_path, ani_name=potential, keep_len=10)
     
-env.show()
+    elif args.force == 'perpendicular':
+        pf_vel = pf.perpendicular(env.obstacle_list[0].points, env.robot.state)
+    
+    elif args.force == 'attractive':
+        pf_vel = pf.attractive(env.robot.goal, env.robot.state)
+
+    elif args.force == 'repulsive':
+        pf_vel = pf.repulsive(env.robot.goal, env.robot.state)
+
+    elif args.force == 'tangential':
+        pf_vel = pf.tangential(env.robot.goal, env.robot.state)
+
+    env.step(pf_vel)
+    env.render()
+
+env.end(ani_name = args.force, ani_kwargs={'subrectangles': True})

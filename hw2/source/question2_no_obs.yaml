@@ -15,5 +15,5 @@ robots:
 
 obstacles:
   - type: 'obstacle_line'
-    number: 1
+    number: 0
     distribute: {mode: 'manual', states: [ [0, 1, 0.2]], shapes: [[20, 0.1]]}

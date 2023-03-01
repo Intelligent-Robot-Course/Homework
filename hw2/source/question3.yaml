@@ -1,17 +1,22 @@
 world:
-  world_height: 10
-  world_width: 10
-  step_time: 0.1
+  height: 10  # the height of the world
+  width: 10   # the height of the world
+  step_time: 0.1  # 10Hz calculate each step
 
 robots:
-  robot_number: 1
-  robot_mode: 'omni'  # omni or diff    omnidirectional adn differential wheel 
-  robot_init_mode: 0 # 0 custom, 1 single row, 2, random, 3 circle
-  init_state_list: [[6, 4, 0]] # init state
-  goal_list: [[9, 6, 0]] # goal position of the robot
-  radius_list: [0.2] # radius of the robot
-  vel_max: [1.5, 1.5]   # maximum velocity
+  type: 'robot_omni'  # # robot_omni, robot_diff, robot_acker
+  number: 1
+  state: [6, 4]  
+  radius: 0.2 # radius of the robot
+  goal: [9, 2]  # goal position of the robot
+  vel_min: [-2, -2]
+  vel_max: [2, 2]
   radius_exp: 0.1  # collision radius = radius + radius_exp
+
+obstacles:
+  - type: 'obstacle_line'
+    number: 3
+    distribute: {mode: 'manual', states: [[5, 3, 0], [7, 3, 1.57], [7, 6, 3.14]], shapes: [[2, 0.1], [3, 0.1], [2, 0.1]]}
 
 obs_lines:
   obs_line_states: [[5, 3, 7, 3], [7, 3, 7, 6], [7, 6, 5, 6]]
