@@ -1,25 +1,25 @@
-from ir_sim.env import env_base
+from ir_sim.env import EnvBase
 from Astar import Astar
 from grid_graph import grid_graph
-from pathlib import Path
+import argparse
 
 ## animation
-animation = False # whether generate the animation
-image_path = Path(__file__).parent / 'image'  # image and animation path
-gif_path = Path(__file__).parent / 'gif'
+parser = argparse.ArgumentParser(description='The given force potential fields')
+parser.add_argument('-a', '--animation', action='store_true')
+args = parser.parse_args()
 
 # environment world
 world_name = 'question1.yaml'
-env = env_base(world_name = world_name)
-grid_map = grid_graph(grid_map_matrix=env.map_matrix, xy_reso=env.xy_reso)
+env = EnvBase(world_name = 'question1.yaml', save_ani=args.animation)
+grid_map = grid_graph(grid_map_matrix=env.world.grid_map, xy_reso=env.world.reso)
 astar = Astar()
 
 # start position
 start_point = [2, 4]
 goal_point = [5, 5]
 
-env.world_plot.draw_point(start_point, markersize=5, color='r')
-env.world_plot.draw_point(goal_point, markersize=5, color='g')
+env.ax.plot(start_point[0], start_point[1], marker='o', markersize=5, color='r')
+env.ax.plot(goal_point[0], goal_point[1], marker='o', markersize=5, color='g')
 
 # start and goal index in the grid map
 start_x, start_y = grid_map.pose_to_index(*start_point)
@@ -37,37 +37,16 @@ path_index_list = astar.generate_path(final_node)
 path_index_list.reverse()
 
 # animation
-i = 0
 for index in visit_list:
     pos_x, pos_y = grid_map.index_to_pose(*index)  
-    env.world_plot.draw_point([pos_x, pos_y])
-
-    if animation:
-        env.save_fig(image_path, i) 
-        i = i +1
-
+    env.ax.plot(pos_x, pos_y, marker='o', markersize=2, color='k')
+    env.step()
     env.render()
 
-j=i+1
 for index in path_index_list:
     pos_x, pos_y = grid_map.index_to_pose(*index)  
-    env.world_plot.draw_point([pos_x, pos_y], color='r')
-
-    if animation:
-        env.save_fig(image_path, j) 
-        j = j +1
+    env.ax.plot(pos_x, pos_y, marker='o', markersize=2, color='r')
+    env.step()
     env.render()
 
-
-if animation:
-    env.save_ani(image_path, gif_path, ani_name='astar', keep_len=10)
-
-env.show()
-
-
-# for i in range(300):
-
-#     des_vel = env.robot.cal_des_vel()
-
-#     env.robot_step(des_vel)
-#     env.render()
+env.end(ani_name = 'astar', ani_kwargs={'subrectangles': True})
