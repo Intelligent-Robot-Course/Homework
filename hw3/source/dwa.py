@@ -15,8 +15,14 @@ class dynamic_window_approach:
         
     def cal_vel(self, cur_pose, goal_pose, current_vel, v_gain=1, g_gain=1, o_gain=1, a_gain=1, astar_path=None):
         
-        # v_gain, g_gain, o_gain, a_gain: the gain for the velocity cost, goal cost, obstacle cost, astar cost, you should modify the gain for you own task.
-
+        '''
+        v_gain, g_gain, o_gain, a_gain: the gain for the velocity cost, goal cost, obstacle cost, astar cost, you should modify the gain for you own task.
+        cur_pose: current pose with x, y; 2*1 vector
+        goal_pose: goal pose with x, y; 2*1 vector
+        current_vel: current velocity; 2*1 vector
+        v_gain, g_gain=1, o_gain, a_gain: the scalar value
+        '''
+       
         cost_list = []
         vel_pair_list = []
         pre_traj_list = []
@@ -30,8 +36,7 @@ class dynamic_window_approach:
                 cost = self.cost_function(goal_pose, vx, vy, pre_traj, vel_cost_gain=v_gain, goal_cost_gain=g_gain, obstacle_cost_gain=o_gain)  # the object(cost) function for you to complete. you should complete this function for the homework question2
 
                 if astar_path is not None:
-                    # complete the astar_cost function for question3
-                    astar_cost = self.astar_cost(pre_traj, astar_path)
+                    astar_cost = self.astar_cost(pre_traj, astar_path) # complete the astar_cost function for question3
                     cost += a_gain * astar_cost
 
                 cost_list.append(cost)
@@ -42,7 +47,7 @@ class dynamic_window_approach:
         dwa_vel = vel_pair_list[min_cost_index]
         dwa_traj = pre_traj_list[min_cost_index]
 
-        return np.array(dwa_vel), dwa_traj
+        return np.c_[dwa_vel], dwa_traj
 
     def search_space(self, current_vel):
  
@@ -72,11 +77,11 @@ class dynamic_window_approach:
     def cost_function(self, goal_pose, vx, vy, pre_traj, vel_cost_gain=1, goal_cost_gain=1, obstacle_cost_gain=1):
         # Calculate the cost of current pair of vx vy
         # you should complete the function for question2. (HintL the summary cost of the following functions)
-        # The cost include three parts: (1) the cost related to velocity, the maximize velocity is better, 10%
+        # The cost include three parts: (1) the cost related to velocity, larger velocity is better, 10%
         # (2) cost realted to the goal, the closer position to the goal is better, 30%
         # (3) cost related to the obstacle, move away from the obstacle is better, 40%
 
-        print('you should complete the cost function')
+        print('you should complete the cost function for question2')
         pass
         # return cost
 
@@ -105,18 +110,18 @@ class dynamic_window_approach:
 
         index_x, index_y = self.graph.pose_to_index(point[0, 0], point[1, 0])
 
-        temp_x = (self.graph.obstacle_index[0] - index_x)
-        temp_y = (self.graph.obstacle_index[1] - index_y) 
+        temp_x = (self.graph.obstacle_index[0] - index_x) * self.graph.xy_reso[0, 0]
+        temp_y = (self.graph.obstacle_index[1] - index_y) * self.graph.xy_reso[1, 0] 
 
         dis_list = [ sqrt(x**2 + y**2) for x, y in zip(temp_x, temp_y)]
-        distance = min(dis_list) * self.graph.xy_reso
+        distance = min(dis_list)
 
         return distance
 
     def astar_cost(self, pre_traj, astar_path):
         # you should complete the function for question3
         # related to the distance between the positions in pre_traj and points in astar_path, 20%
-        print('you should complete the astar cost function')
+        print('you should complete the astar cost function for question3')
         pass
         
 

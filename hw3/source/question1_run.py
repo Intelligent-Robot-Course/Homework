@@ -3,36 +3,29 @@ from Astar import Astar
 from grid_graph import grid_graph
 import argparse
 
-## animation
 parser = argparse.ArgumentParser(description='The given force potential fields')
+
 parser.add_argument('-a', '--animation', action='store_true')
 args = parser.parse_args()
 
-# environment world
-world_name = 'question1.yaml'
-env = EnvBase(world_name = 'question1.yaml', save_ani=args.animation)
+env = EnvBase('question1.yaml', save_ani=args.animation)
 grid_map = grid_graph(grid_map_matrix=env.world.grid_map, xy_reso=env.world.reso)
 astar = Astar()
 
-# start position
 start_point = [2, 4]
 goal_point = [5, 5]
 
 env.ax.plot(start_point[0], start_point[1], marker='o', markersize=5, color='r')
 env.ax.plot(goal_point[0], goal_point[1], marker='o', markersize=5, color='g')
 
-# start and goal index in the grid map
 start_x, start_y = grid_map.pose_to_index(*start_point)
 goal_x, goal_y = grid_map.pose_to_index(*goal_point)
 
-# start and goal graph node
 start_node = grid_map.node_tuple(start_x, start_y, 0, None)
 goal_node = grid_map.node_tuple(goal_x, goal_y, 0, None)
 
-# The astar algorithm, you should complete this function
 final_node, visit_list = astar.find_path(grid_map, start_node, goal_node)
 
-# plot the path
 path_index_list = astar.generate_path(final_node)
 path_index_list.reverse()
 
@@ -49,4 +42,4 @@ for index in path_index_list:
     env.step()
     env.render()
 
-env.end(ani_name = 'astar', ani_kwargs={'subrectangles': True})
+env.end(ani_name = 'astar', ani_kwargs={'subrectangles': True}, show_traj=True)

@@ -67,7 +67,7 @@ There are three files for question2 in the source folder, *[question2.yaml](sour
 
 - *question2.yaml* is the parameter set for the simulation environment. 
 - *question2_run.py* is the python file to perform and test the robot and potential field algorithm.
-- *potential_fields.py* is the potential field class which defines the primitive potential fields as shown in the mentioned figure. You should complete this file.  
+- *potential_fields.py* is the potential field class which defines the primitive potential fields as shown in the mentioned figure. **You should complete this file**.  
 
 You should complete the file *[potential_fields.py](source/potential_fields.py)* and run *[question2_run.py](source/question2_run.py)* to show the simulation results by the command:
 

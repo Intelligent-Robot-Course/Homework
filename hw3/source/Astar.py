@@ -10,6 +10,12 @@ class Astar:
 
     def find_path(self, graph, start_pos, goal_pos):
         
+        '''
+        graph: the instance of the class defined in the grid_graph file
+        start_pos: The start node consist of four parts: (x, y, cost, parent node)
+        goal_pos: The goal node consist of four parts: (x, y, cost, parent node) 
+        '''
+
         print('start to Astar search') 
 
         frontier = queue.PriorityQueue()  # priority queue for algorithm to explore current points.

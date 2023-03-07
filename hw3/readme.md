@@ -4,39 +4,33 @@
 
 **Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple [robotics simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu). You can follow the [Coding instruction](#jump) to use this simulator to complete the coding question1,2,3. Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX, the scan version is also accepted). Your code should be run step-by-step without any error. Real-time animation is also encouraged.
 
-**Note:** The graphs as shown below are only simple demonstrations to help you understand. You can develop your own algorithms to achieve higher performance by your understanding.
+**Note:** The graphs as shown below are only simple demonstrations to help your understanding. You can develop your own algorithms to achieve higher performance.
 
 ## Question1 
 
-Simulate the Astar algorithm depending on the given grid map. You can follow the [Coding instruction](#jump) to use the robotics simulator to complete this task. 
+Simulate the Astar algorithm depending on the given grid map. You can follow the [Coding instruction](#jump) to use the robotics simulator [ir_sim 1.1.8](https://github.com/hanruihua/ir_sim) to complete this task. 
 
-<div align=center> <img src=image/astar.gif width=50%/> </div>
+<div align=center> <img src=animation/astar.gif width=50%/> </div>
 
 ## Question2 
 
-Simulate a robot to achieve the collision avoidance motion with dynamic window approach(DWA). You can follow the [Coding instruction](#jump) to use the robotics simulator to complete this task.
+Simulate a robot to achieve the collision avoidance motion with dynamic window approach (DWA). Please follow the [Coding instruction](#jump) to complete this task under [ir_sim 1.1.8](https://github.com/hanruihua/ir_sim). 
 
-<div align=center> <img src=image/dwa.gif width=50%/> </div>
+<div align=center> <img src=animation/dwa.gif width=50%/> </div>
 
 ## Question3 - Extra Credit
 
-Combine the astar and dwa to achieve the 5D planning under the given grid map. You can follow the [Coding instruction](#jump) to use the robotics simulator to complete this task.
+Combine the Astar and dwa to achieve the 5D planning under the given grid map. Please complete this task by following the [Coding instruction](#jump). 
 
-<div align=center> <img src=image/astar_dwa.gif width=50%/> </div>
+<div align=center> <img src=animation/astar_dwa.gif width=50%/> </div>
 
 ## <span id="jump">Coding instruction</span>
 
 ### Install the intelligent robotics simulator
 
 ```
-git clone -b edu https://github.com/hanruihua/intelligent-robot-simulator.git
-cd intelligent-robot-simulator
-pip install -e .
+pip install ir_sim == 1.1.8
 ```
-
-**Note1**: Please confirm that this repository is under the *edu* branch. You can use **git branch** to check current branch. If it is not under the *edu* branch, you can use **git checkout edu** to change current branch to *edu* branch.
-
-**Note2**: The pycharm reduces the functionality of Matplotlib, which may lead to the failure of saving the gif animation. You can follow this [link](https://blog.csdn.net/Weiai_520/article/details/106437605) to solve this problem
 
 ### Code for question1
 
@@ -44,10 +38,20 @@ There are four files for question1 in the source folder, *[question1.yaml](sourc
 
 - *question1.yaml* is the configuration file for the simulator.
 - *question1_run.py* is the main program
-- *[Astar.py](source/Astar.py)* is the file to perform A star algorithm. You should complete this file for the coding task.
+- *[Astar.py](source/Astar.py)* is the file to perform A star algorithm. **You should complete this file for the coding task.**
 - *grid_graph.py* is the file that defines the class about the grid map for you to use. 
 
-You should complete the file *[Astar.py](source/Astar.py)* and run *question1_run.py* to show the simulation results. You can set the parameter *animation = True* in *question1_run.py* to generate the gif file.
+You should complete the file *[Astar.py](source/Astar.py)* and run *question1_run.py* to show the simulation results by the following command:
+
+```
+python question1_run.py
+```
+
+If you want to save the animation, you can run this command:
+
+```
+python question1_run.py -a
+```
 
 ### Code for question2
 
@@ -55,14 +59,36 @@ There are four files for question1 in the source folder, *[question2.yaml](sourc
 
 - *question2.yaml* is the configuration file for the simulator.
 - *question2_run.py* is the main program
-- *[dwa.py](source/dwa.py)* is the file to perform dwa algorithm. You should complete this file for the coding task.(the cost function)
+- *[dwa.py](source/dwa.py)* is the file to perform dwa algorithm. **You should complete the cost function in this file for the coding task.**
 - *grid_graph.py* is the file that defines the class about the grid map for you to use. 
 
-You should complete the functions in *[dwa.py](source/dwa.py)* and run *question2_run.py* to show the simulation results. You can set the parameter *animation = True* in *question2_run.py* to generate the gif file.
+You should complete the functions in *[dwa.py](source/dwa.py)* and run *question2_run.py* to show the simulation results by the command:
+
+```
+python question2_run.py
+```
+
+If you want to save the animation, you can run this command:
+
+```
+python question2_run.py -a
+```
 
 ### Code for question3
 
 There are two main files for question3 in the source folder, *[question3.yaml](source/question3.yaml)*, *[question3_run.py](source/question3_run.py)*. In question3, you should utilize the file and function defined and completed the in question1 and question2 to complete the 5D planning. You should complete the function **astar_cost** in the file *[dwa.py](source/dwa.py)* to complete this task.
+
+Please run the following commands to see the simulated results:
+
+```
+python question3_run.py
+```
+
+If you want to save the animation, you can run this command:
+
+```
+python question3_run.py -a
+```
 
 **Note:** All the gain arguments should be tuned for your own task.
 
