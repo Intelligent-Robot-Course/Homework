@@ -2,8 +2,6 @@
 
 -- Course: *Intelligent Robotics – Professor: Qi Hao*
 
-**Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple [robotics simulator](https://github.com/hanruihua/intelligent-robot-simulator/tree/edu). You can follow the [Coding instruction](#jump) to use this simulator to complete the coding question1,2,3. Your final submission should be a compressed package with extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX, the scan version is also accepted). Your code should be run step-by-step without any error. Real-time animation is also encouraged.
-
 **Note:** The graphs as shown below are only simple demonstrations to help your understanding. You can develop your own algorithms to achieve higher performance.
 
 ## Question1 
