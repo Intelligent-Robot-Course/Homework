@@ -29,7 +29,7 @@ Combine the Astar and dwa to achieve the 5D planning under the given grid map. P
 ### Install the intelligent robotics simulator
 
 ```
-pip install ir_sim == 1.1.8
+pip install ir_sim==1.1.8
 ```
 
 ### Code for question1

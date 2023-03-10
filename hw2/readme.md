@@ -49,7 +49,7 @@ All the assignments are performed based on a simple python based intelligent rob
 
 You can install this repository by pip:
 ```
-pip install ir_sim == 1.1.8 
+pip install ir_sim==1.1.8 
 ```
 
 **Note**: Please confirm that the version is 1.1.8. 

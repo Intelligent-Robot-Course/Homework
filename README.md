@@ -25,7 +25,7 @@ The homework for the intelligent robotics course.
 - **Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple [robotics simulator (ir_sim 1.1.8)](https://github.com/hanruihua/ir_sim). Please install this tool with the version 1.1.8 in advance by the following command:
 
 ```
-pip install ir_sim == 1.1.8
+pip install ir_sim==1.1.8
 ```
 
 - If your IDE is pycharm, there may be some problems about the functionality of Matplotlib, which may lead to the failure of saving the GIF animation. You can follow this [link](https://blog.csdn.net/Weiai_520/article/details/106437605) to solve this problem. 
