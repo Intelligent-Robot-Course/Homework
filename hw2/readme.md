@@ -8,6 +8,8 @@
 
 **Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple [robotics simulator (ir_sim 1.1.8)](https://github.com/hanruihua/ir_sim). You can follow the [Coding instruction](#jump) to use this simulator to complete the coding part in question2 and question3. Your final submission should be a compressed package with the extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX). Your code should be run step-by-step without any error. Real-time animation is strong encouraged. 
 
+-----
+
 ## Question 1
 
 - (a) Imagine you want your robot to perform navigation tasks, which approach would you choose?

@@ -4,6 +4,8 @@
 
 **Note:** The graphs as shown below are only simple demonstrations to help your understanding. You can develop your own algorithms to achieve higher performance.
 
+-----
+
 ## Question1 
 
 Simulate the Astar algorithm depending on the given grid map. You can follow the [Coding instruction](#jump) to use the robotics simulator [ir_sim 1.1.8](https://github.com/hanruihua/ir_sim) to complete this task. 

@@ -22,7 +22,7 @@ The homework for the intelligent robotics course.
 
 - **Written Homeworks.** All calculation problems must be written on single-sided A4 paper. The scan version of the paper will also be accepted. Your final submission should be a compressed package with the extension .zip, which includes your codes and explanations (you need to know how to write the manuscript with Markdown or LATEX). Your code should be run step-by-step without any error. Real-time animation is strongly encouraged. 
 
-- **Coding Homeworks.** Most of coding assignments will be done by Python(>=3.5) under a simple [robotics simulator (ir_sim 1.1.8)](https://github.com/hanruihua/ir_sim). Please install this tool with the version 1.1.8 in advance by the following command:
+- **Coding Homeworks.** Most of coding assignments will be done by Python(>=3.7) under a simple [robotics simulator (ir_sim 1.1.8)](https://github.com/hanruihua/ir_sim). Please install this tool with the version 1.1.8 in advance by the following command:
 
 ```
 pip install ir_sim==1.1.8
