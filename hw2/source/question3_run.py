@@ -11,7 +11,6 @@ args = parser.parse_args()
 point = namedtuple('point', 'x y')
 
 env = EnvBase(world_name='question3.yaml', save_ani=args.animation)
-env.show()
 
 pf = potential_fields()
 
