@@ -2,27 +2,18 @@ from mdp import mdp
 import numpy as np
 from grid_map import grid_map
 from mdp import mdp
-from ir_sim.env import env_base
+from ir_sim.env import EnvBase
 from pathlib import Path
+import sys
 
-map_matrix = np.load('map_matrix.npy')
-reward_matrix = np.load('reward_matrix.npy')
+cur_path = sys.path[0]
 
-env = env_base(world_width = 20, world_height = 20)
+map_matrix = np.load(cur_path + '/map_matrix.npy')
+reward_matrix = np.load(cur_path + '/reward_matrix.npy')
+
 grid_map = grid_map(map_matrix=map_matrix, reward_matrix=reward_matrix)
-mdp = mdp(grid_map)
+mdp_policy = mdp(grid_map)
 
-# grid_map.show_map()
+policy_value = mdp_policy.policy_evaluation()
 
-## please complete the function value_iteration()
-policy_value = mdp.value_iteration()
 print(policy_value)
-
-
-
-
-
-
-
-
-

@@ -56,9 +56,9 @@ class grid_map:
         self.map_matrix[index[0], index[1], :] = 255
 
     def show_map(self):
-        plt.imshow(self.map_matrix)
+        plt.imshow(self.map_matrix / 255 )
         plt.show()
 
-    def draw_map(self, time=0.01):
-        plt.imshow(self.map_matrix)
+    def draw_map(self, time=0.0001):
+        plt.imshow(self.map_matrix / 255)
         plt.pause(time) 
