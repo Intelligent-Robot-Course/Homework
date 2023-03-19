@@ -4,7 +4,7 @@ from grid_graph import grid_graph
 from dwa import dynamic_window_approach
 import argparse
 
-parser = argparse.ArgumentParser(description='The given force potential fields')
+parser = argparse.ArgumentParser()
 
 parser.add_argument('-a', '--animation', action='store_true')
 args = parser.parse_args()

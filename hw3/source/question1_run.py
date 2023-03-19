@@ -3,7 +3,7 @@ from Astar import Astar
 from grid_graph import grid_graph
 import argparse
 
-parser = argparse.ArgumentParser(description='The given force potential fields')
+parser = argparse.ArgumentParser()
 
 parser.add_argument('-a', '--animation', action='store_true')
 args = parser.parse_args()
