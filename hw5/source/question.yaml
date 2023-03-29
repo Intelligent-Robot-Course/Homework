@@ -1,0 +1,5 @@
+world:
+  height: 20
+  width: 20
+  step_time: 0.1
+

@@ -1,29 +1,27 @@
 import numpy as np
 from grid_map import grid_map
-from ir_sim.env import env_base
-from pathlib import Path
 from reinforcement_learning import reinforcement_learning
 import sys
-from pathlib import Path
+import argparse
+from ir_sim.env import EnvBase
 
-animation = False
+parser = argparse.ArgumentParser()
+
+parser.add_argument('-a', '--animation', action='store_true')
+args = parser.parse_args()
 
 # path set
-cur_path = sys.path[0]
-map_path = cur_path + '/map_matrix.npy'
-reward_path = cur_path + '/reward_matrix.npy'
-image_path = Path(__file__).parent / 'image' 
-gif_path = Path(__file__).parent / 'gif'
+map_path = sys.path[0] + '/map_matrix.npy'
+reward_path = sys.path[0] + '/reward_matrix.npy'
 
 # load map and reward matrix
 map_matrix = np.load(map_path)
 reward_matrix = np.load(reward_path)
 
 # set environment and grid_map
-env = env_base(world_width = 20, world_height = 20)
+env = EnvBase('question.yaml', save_ani=args.animation)
 grid_map = grid_map(map_matrix=map_matrix, reward_matrix=reward_matrix, start_index=(2, 2))
 
-# run SARSA algorithm
 rl = reinforcement_learning(grid_map.state_space, grid_map.action_space, grid_map)
 state_action_value = rl.SARSA()
 
@@ -36,17 +34,15 @@ for i in range(300):
     grid_map.set_path(cur_index)
     grid_map.draw_map()
 
-    if animation: env.save_fig(image_path, i)
+    env.step()
+    env.render()
 
     if done: 
         print('done')
         break
 
-if animation: env.save_ani(image_path, gif_path, ani_name='SARSA', keep_len=10)
-
 grid_map.show_map()
 
-# print(policy_value)
 
 
 

@@ -1,5 +1,6 @@
 import numpy as np
 from math import inf
+from tqdm import tqdm
 # different from MDP: Solve MDP when reward/transition models are unknown (no knowledge of MDP transitions / rewards.)
 
 class reinforcement_learning:
@@ -18,13 +19,19 @@ class reinforcement_learning:
         # do not know the state transitions
         # agent learns from sampled experience
         # Only can be used in episodic problems
+
         policy_matrix = np.ones((self.state_space[0], self.state_space[1], len(self.action_space))) / len(self.action_space)  # initialize the policy with prob 0.25 for all actions
+
         state_action_value = np.zeros((self.state_space[0], self.state_space[1], len(self.action_space)))  # initialize the state action value
+
         state_action_returns_num = np.zeros((self.state_space[0], self.state_space[1], len(self.action_space)))  # initialize the state action explore number
 
-        for i in range(epi_num):
-            print('episode number percent {:.2%}'.format(i/epi_num))
+        # for i in range(epi_num):
+        print('episode number percent: ')
+        for i in tqdm(range(epi_num)): 
+
             state_action_return_list, state_action_value, state_action_returns_num = self.state_action_evaluation(policy_matrix, state_action_value, state_action_returns_num, visit)
+            
             policy_matrix = self.policy_update(policy_matrix, state_action_return_list, state_action_value)          
 
         return policy_matrix
@@ -40,16 +47,13 @@ class reinforcement_learning:
         state_action_return_list = self.episode_state_action_return(policy, start_state, start_action)
         
         # calculate the state_action_value depend current episode
+
+        # calculate the state_action_value depend current episode
         ## ----------------------------------------------------------------
         if visit == 'first':
-            #you should complement this part to complete the state_action_evaluation for monte_carlo_es
+            #you should complement this part to complete the state_action_evaluation for monte_carlo_es (# incrmental mean)
             pass
-            
-
-
-                
-
-
+                    
         ## ----------------------------------------------------------------
 
         return state_action_return_list, state_action_value, state_action_returns_num
@@ -81,7 +85,7 @@ class reinforcement_learning:
 
             # prevent the dilemma
             if next_state in visit_state:
-                reward = -0.1
+                reward = self.grid_map.reward_pen
             
             state_action_list.append( (cur_state, cur_action, reward) )
             visit_state.add(cur_state)
@@ -108,7 +112,6 @@ class reinforcement_learning:
             #you should complement this part to calculate the state_action_returns depending on the state_action_list for monte_carlo_es
 
 
-            pass
         state_action_returns.reverse()
         ## ----------------------------------------------------------------
 
@@ -118,8 +121,10 @@ class reinforcement_learning:
 
         state_action_value = np.zeros((self.state_space[0], self.state_space[1], len(self.action_space)))  # initialize the state action value
 
-        for i in range(epi_num):
-            print('episode number percent {:.2%}'.format(i/epi_num))
+        print('episode number percent: ')
+        for i in tqdm(range(epi_num)): 
+        # for i in range(epi_num):
+            # print('episode number percent {:.2%}'.format(i/epi_num))
             cur_state = np.random.randint(low=[0, 0], high=self.state_space, size=2) # random init start state
             cur_action = self.action_choose_greedy(state_action_value[cur_state[0], cur_state[1], :])
             
@@ -129,16 +134,13 @@ class reinforcement_learning:
                 # epsilon greedy
                 next_state, reward, _, done = self.grid_map.step(cur_state, cur_action)
                 next_action = self.action_choose_greedy(state_action_value[next_state[0], next_state[1], :])
-                
+
                 ## ----------------------------------------------------------------
                 # You should complement this part to complete the Q value update function (refer to the Pseudocode)
                 pass
-
-
-
-
-
+                
                 ## ----------------------------------------------------------------    
+
                 cur_state = next_state
                 cur_action = next_action
 
@@ -150,28 +152,25 @@ class reinforcement_learning:
     def Q_learning(self, epi_num=10000, step_size=0.4, max_ep_len=100):
 
         state_action_value = np.zeros((self.state_space[0], self.state_space[1], len(self.action_space)))  # initialize the state action value
-
-        for i in range(epi_num):
-            print('episode number percent {:.2%}'.format(i/epi_num))
+        print('episode number percent: ')
+        for i in tqdm(range(epi_num)): 
+        # for i in range(epi_num):
+            # print('episode number percent {:.2%}'.format(i/epi_num))
             cur_state = np.random.randint(low=[0, 0], high=self.state_space, size=2) # random init start state
             cur_action = self.action_choose_greedy(state_action_value[cur_state[0], cur_state[1], :])
             
             # each episode
             for j in range(max_ep_len):
+
                 # epsilon greedy
                 next_state, reward, _, done = self.grid_map.step(cur_state, cur_action)
                 next_action = self.action_choose_greedy(state_action_value[next_state[0], next_state[1], :])
 
                 ## ----------------------------------------------------------------
                 # You should complement this part to complete the Q value update function (refer to the Pseudocode)
-                pass
-
-
-
-
 
                 ## ----------------------------------------------------------------    
-                
+
                 cur_state = next_state
                 cur_action = next_action
 

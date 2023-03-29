@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 from math import sqrt
 
 class grid_map:
-    def __init__(self, map_matrix=None, reward_matrix=None, start_index=(2, 2), goal_index=(16, 16), reward_bound=-5, reward_collision=-0.1):
+    def __init__(self, map_matrix=None, reward_matrix=None, start_index=(2, 2), goal_index=(16, 16), reward_bound=-5, reward_pen=-0.1):
         self.map_matrix = map_matrix
 
         self.state_space = map_matrix.shape[0:2]
         self.action_space = [ (1, 0), (-1, 0), (0, 1), (0, -1) ]
         self.reward_matrix = reward_matrix
         self.reward_bound = reward_bound
-        self.reward_collision = reward_collision
+        self.reward_pen = reward_pen
 
         self.start_index = start_index
         self.goal_index = goal_index
@@ -51,13 +51,14 @@ class grid_map:
             done = True
         else:        
             reward = self.reward_matrix[next_x, next_y]
+            # distance_to_goal = sqrt( (next_x - self.goal_index[0])**2 + (next_y - self.goal_index[1])**2)\
+            
+            # if distance_to_goal == 0:
+            #     heuristic_reward = 10
+            # else:
+            #     heuristic_reward = 1/distance_to_goal
 
-            ## Extra Credit 
-            # ----------------------------------------------------------------
-            # You can add the heuristic reward here, such as the dwa reward, astar reward, or distance-to-goal reward learned from previous lectures to achieve a regular policy as you expected (such as keeping moving away from the obstacle.). In addition, if the self.reward_matrix[next_x, next_y] == reward_collision, there should the obstacle grid index.
-            pass
-            # example: reward = self.reward_matrix[next_x, next_y] + heuristic_reward
-            # ----------------------------------------------------------------
+            # reward = self.reward_matrix[next_x, next_y] + heuristic_reward
             done = False
 
         if next_x == self.goal_index[0] and next_y == self.goal_index[1]:
@@ -71,9 +72,9 @@ class grid_map:
         self.map_matrix[index[0], index[1], :] = 255
 
     def show_map(self):
-        plt.imshow(self.map_matrix)
+        plt.imshow(self.map_matrix/ 255)
         plt.show()
 
     def draw_map(self, time=0.01):
-        plt.imshow(self.map_matrix)
+        plt.imshow(self.map_matrix / 255)
         plt.pause(time) 

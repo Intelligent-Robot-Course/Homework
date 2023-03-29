@@ -1,29 +1,23 @@
 import numpy as np
 from grid_map import grid_map
-from ir_sim.env import env_base
-from pathlib import Path
+from ir_sim.env import EnvBase
 from reinforcement_learning import reinforcement_learning
 import sys
-from pathlib import Path
+import argparse
 
-animation = False
+parser = argparse.ArgumentParser()
 
-# path set
-cur_path = sys.path[0]
-map_path = cur_path + '/map_matrix.npy'
-reward_path = cur_path + '/reward_matrix.npy'
-image_path = Path(__file__).parent / 'image' 
-gif_path = Path(__file__).parent / 'gif'
+parser.add_argument('-a', '--animation', action='store_true')
+args = parser.parse_args()
 
 # load map and reward matrix
-map_matrix = np.load(map_path)
-reward_matrix = np.load(reward_path)
+map_matrix = np.load(sys.path[0] + '/map_matrix.npy')
+reward_matrix = np.load(sys.path[0] + '/reward_matrix.npy')
 
 # set environment and grid_map
-env = env_base(world_width = 20, world_height = 20)
-grid_map = grid_map(map_matrix=map_matrix, reward_matrix=reward_matrix, start_index=(2, 2))
+env = EnvBase('question.yaml', save_ani=args.animation)
+grid_map = grid_map(map_matrix, reward_matrix, (2, 2))
 
-# run monte_carlo_es algorithm
 rl = reinforcement_learning(grid_map.state_space, grid_map.action_space, grid_map)
 policy = rl.monte_carlo_es()
 
@@ -36,19 +30,13 @@ for i in range(300):
     grid_map.set_path(cur_index)
     grid_map.draw_map()
 
-    if animation: env.save_fig(image_path, i)
+    env.step()
+    env.render()
 
     if done: 
         print('done')
         break
 
-if animation: env.save_ani(image_path, gif_path, ani_name='monte_carlo_es', keep_len=10)
-
 grid_map.show_map()
-
-# print(policy_value)
-
-
-
 
 
