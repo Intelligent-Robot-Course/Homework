@@ -18,7 +18,23 @@ import numpy as np
 
 
 def quadratic(x, c, r):
-    return **complete the error section**
+
+    '''
+    complete the error section for task2
+    x: point
+    c: stations (APs)
+    r: distance_to_station (d)
+    '''
+
+    # ----------------------task2----------------------
+
+
+
+    # ----------------------task2----------------------
+
+
+
+    return error
 
 
 if __name__ == "__main__":
@@ -26,4 +42,14 @@ if __name__ == "__main__":
     distance_to_station = [0.1, 0.5, 0.5, 1.3]
     optimizer = CMA(mean=np.zeros(2), sigma=1.3)
 
-**finish the main function of cmaes optimization**
+    '''
+    complete the main function for task3
+    '''
+
+    # ----------------------task3----------------------
+
+
+    # ----------------------task3----------------------
+
+
+
