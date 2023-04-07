@@ -1,5 +1,5 @@
 # Homework
-The solutions of the homework of intelligent robotics course
+The homework of intelligent robotics course
 
 ## Introduction 
 
