@@ -33,6 +33,9 @@ for i in range(300):
     cur_index, _, _, done = grid_map.step(cur_index, action_index)
     grid_map.set_path(cur_index)
     grid_map.draw_map()
+    
+    env.step()
+    env.render()
 
     if done: 
         print('done')
