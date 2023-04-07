@@ -103,7 +103,7 @@ class reinforcement_learning:
             if done: 
                 break
 
-        state_action_returns = []
+        state_action_returns = [] ##[((state[0],state[1],action),G)]
         G = 0    
 
         ## ----------------------------------------------------------------
