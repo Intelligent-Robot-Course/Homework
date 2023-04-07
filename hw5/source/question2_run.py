@@ -43,6 +43,8 @@ for i in range(300):
 
 grid_map.show_map()
 
+env.end(ani_name = 'SARSA', ani_kwargs={'subrectangles': True})
+
 
 
 
