@@ -40,6 +40,8 @@ for i in range(300):
 
 grid_map.show_map()
 
+env.end(ani_name = 'Q_learning', ani_kwargs={'subrectangles': True})
+
 
 
 
