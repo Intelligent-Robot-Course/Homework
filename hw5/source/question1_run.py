@@ -39,4 +39,6 @@ for i in range(300):
 
 grid_map.show_map()
 
+env.end(ani_name = 'MonteCarloReinforcemenetlearning', ani_kwargs={'subrectangles': True})
+
 
