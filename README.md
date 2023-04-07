@@ -1,4 +1,4 @@
-# Homework_Solution
+# Homework
 The solutions of the homework of intelligent robotics course
 
 ## Introduction 
