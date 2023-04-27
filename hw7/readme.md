@@ -63,7 +63,8 @@ If the kalman filter design is complete, we just have to write the code to run t
 The initial uncertanty for the motion noise and observation noise are defined in the code.
 The comparisons between the odometry, GPS, filter and ground truth are shown in the following figure:
 
-<div align=left> <img src=sources/kalman_compare.png width=40%/> </div>
+<!-- <div align=left> <img src=sources/kalman_compare.png width=40%/> </div> -->
+<div align=left> <img src=sources/kfilter.png width=40%/>
 
 ## Particle filter 2D localization
 In a 2D map with some landmarks, a robot moves with velocity-based motion model and can measure its relative distances from nearby landmarks.
