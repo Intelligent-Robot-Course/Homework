@@ -13,7 +13,7 @@ theta_next = theta + omega
 '''
 
 def next_state(prev_state, ip):
-    x_next = prev_state[0] + ip[0] * math.acos(prev_state[2])
+    x_next = prev_state[0] + ip[0] * math.cos(prev_state[2])
     y_next = prev_state[1] + ip[0] * math.sin(prev_state[2])
     theta_next = prev_state[2] + ip[1]
 
