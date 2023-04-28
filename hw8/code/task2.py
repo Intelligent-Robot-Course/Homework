@@ -18,3 +18,4 @@ for z in measurements:
 
 p_m = # todo
 plt.plot(m,p_m)
+plt.show()
