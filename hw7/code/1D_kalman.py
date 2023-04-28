@@ -77,7 +77,7 @@ for x in x_axis:
 
 # plot the result
 plt.plot(x_axis, g)
-
+plt.show()
 
 
 # display the *initial* gaussian over a range of x values
@@ -95,3 +95,4 @@ for x in x_axis:
 
 # plot the result
 plt.plot(x_axis, g)
+plt.show()
