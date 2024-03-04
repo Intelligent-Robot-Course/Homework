@@ -15,7 +15,7 @@ The state transition for the action open the door is as shown in the following f
 
 ### Question 2
 
-A robot is going through a door, where the state of the door is x = {open,closed}, the measurement of the door by the robot is *z = {open,closed}*, and the action of the robot is *u = {push,do_nothing}*. We assume that:
+A robot is going through a door, where the state of the door is x = {open,closed}, the measurement of the door by the robot is *z = {open,closed}*, and the action of the robot is *u = {push,do_nothing}*. Here the actions are performed before observations. We assume that:
 
 * (1) The robot doesn't know the state of the door initially;
 
