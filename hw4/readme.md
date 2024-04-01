@@ -53,11 +53,11 @@ pip install ir_sim==1.1.8
 
 
 
-There are seven files for these questions in the source folder, *[question_run1.py](source/question_run1.py)*, *[question_run2.py](source/question_run2.py)*, *[question_run3.py](source/question_run3.py)*, *[mdp.py](source/mdp.py)*, *[grid_map.py](source/grid_map.py)*, *[map_matrix.npy](source/map_matrix.npy)*, and *[reward_matrix.npy](source/reward_matrix.npy)*
+There are seven files for these questions in the source folder, *[question1_run.py](source/question1_run.py)*, *[question2_run.py](source/question2_run.py)*, *[question3_run.py](source/question3_run.py)*, *[mdp.py](source/mdp.py)*, *[grid_map.py](source/grid_map.py)*, *[map_matrix.npy](source/map_matrix.npy)*, and *[reward_matrix.npy](source/reward_matrix.npy)*
 
-- *question_run1.py* is the main program you should run for question1
-- *question_run2.py* is the main program you should run for question2
-- *question_run3.py* is the main program you should run for question3
+- *question1_run.py* is the main program you should run for question1
+- *question2_run.py* is the main program you should run for question2
+- *question3_run.py* is the main program you should run for question3
 - **[mdp.py](source/mdp.py)** is the file to perform Markov Decision Process (MDP) algorithm. You should complete the functions including policy_evaluation, policy_iteration, and value_iteration and policy iteration in this file for above questions. 
 - *grid_map.py* is the file that defines the class about the grid map for you to use.
 - *map_matrix.npy* and *reward_matrix.npy* define the map and the reward in each grid.
