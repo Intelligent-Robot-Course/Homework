@@ -69,7 +69,7 @@ def kalman_filter_update(state_pred, cov_pred, observation, H, R):
 '''
 ****Complete this function for task2
 '''
-    return s
+    return 
 
 
 # Set up matrices for the Kalman Filter
