@@ -64,7 +64,7 @@ The initial uncertanty for the motion noise and observation noise are defined in
 The comparisons between the odometry, GPS, filter and ground truth are shown in the following figure:
 
 <!-- <div align=left> <img src=sources/kalman_compare.png width=40%/> </div> -->
-<div align=left> <img src=sources/kfilter.png width=40%/>
+<div align=left> <img src=sources/Kalman_filter.gif width=40%/>
 
 ## Particle filter 2D localization
 In a 2D map with some landmarks, a robot moves with velocity-based motion model and can measure its relative distances from nearby landmarks.
@@ -83,7 +83,7 @@ You will use the particle filter algorithm to locate the robot based on the dist
 
 You can refer to [Tutorial of particle filter ](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/12-Particle-Filters.ipynb) for better understanding and python implementation of particle filter.
 
-<div align=left> <img src=sources/animation.gif width=50%/> </div>
+<div align=left> <img src=sources/Particle_filter.gif width=50%/> </div>
 
 This is a sensor fusion localization with Particle Filter(PF).
 
