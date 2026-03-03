@@ -74,7 +74,7 @@ pip install tqdm
 
 There are multiple files for these questions in the source folder. 
 
-- *[question_run1.py](hw5/source/question_run1.py)*: is the main program you should run for question1
+- *[question_run1.py](source/question_run1.py)*: is the main program you should run for question1
 - *[question_run2.py](source/question_run2.py)*: is the main program you should run for question2
 - *[question_run3.py](source/question_run3.py)*: is the main program you should run for question3
 - *[reinforcement_learning.py](source/reinforcement_learning.py)*: is the library to implement three reinforcement learning algorithms: Monte Carlo Exploring Starts, Sarsa, and Q-learning. You should fill in this file to complete these three algorithms for the questions. 
